@@ -21,4 +21,5 @@ public class Signup extends AppCompatActivity {
             return insets;
         });
     }
+
 }

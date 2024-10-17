@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient"
-    tools:context=".MainActivity">
+    tools:context=".Login">
 
     <ImageView
         android:id="@+id/girl"
@@ -28,8 +28,6 @@
         app:layout_constraintEnd_toEndOf="@id/guide2"
         app:layout_constraintStart_toStartOf="@id/guide1"
         app:layout_constraintTop_toTopOf="@id/main" />
-
-
 
     <Button
         android:id="@+id/login"
@@ -92,6 +90,7 @@
         app:layout_constraintTop_toBottomOf="@id/icon_img"
         app:layout_constraintBottom_toTopOf="@id/pass"
         app:startIconDrawable="@drawable/user_icon"
+
         />
 
     <EditText
@@ -99,12 +98,13 @@
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_marginBottom="20dp"
+        android:alpha="0.6"
         android:background="@color/white"
         android:hint="@string/password"
-        android:alpha="0.6"
+        app:layout_constraintBottom_toTopOf="@id/login"
         app:layout_constraintEnd_toEndOf="@id/guide2"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@id/guide1"
-        app:layout_constraintTop_toBottomOf="@id/name"
-        app:layout_constraintBottom_toTopOf="@id/login"/>
+        app:layout_constraintTop_toBottomOf="@id/name" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 
