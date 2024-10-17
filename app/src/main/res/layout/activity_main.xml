@@ -33,6 +33,7 @@
 
     <Button
         android:id="@+id/login"
+        style="@style/buttonFlat"
         android:text="@string/LOGIN"
         app:cornerRadius="8dp"
         app:layout_constraintBottom_toTopOf="@id/cancel"
@@ -40,20 +41,16 @@
         app:layout_constraintEnd_toEndOf="@id/guide2"
         app:layout_constraintStart_toStartOf="@id/guide1"
         app:layout_constraintTop_toBottomOf="@id/pass"
-        style="@style/buttonFlat" />
+         />
 
     <Button
         android:id="@+id/cancel"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="4dp"
-        android:backgroundTint="@color/white"
         android:text="@string/CANCEL"
-        android:textColor="@color/black"
         app:cornerRadius="8dp"
         app:layout_constraintEnd_toEndOf="@id/guide2"
         app:layout_constraintStart_toStartOf="@id/guide1"
-        app:layout_constraintTop_toBottomOf="@id/login"/>
+        app:layout_constraintTop_toBottomOf="@id/login"
+        style="@style/buttonOutlined" />
 
     <Button
         android:id="@+id/register"

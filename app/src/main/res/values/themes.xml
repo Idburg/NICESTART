@@ -6,4 +6,5 @@
     </style>
 
     <style name="Theme.NICESTART" parent="Base.Theme.NICESTART" />
+    <style name="Theme.NICESTART.ActionBar" parent="Theme.Material3.DayNight" />
 </resources>
