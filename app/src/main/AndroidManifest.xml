@@ -23,6 +23,7 @@
             android:theme="@style/Theme.NICESTART.ActionBar" />
         <activity
             android:name=".Login"
+            android:theme="@style/Base.Theme.NICESTART"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
