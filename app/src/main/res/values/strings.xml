@@ -8,9 +8,4 @@
     <string name="register">REGISTER</string>
     <string name="LOGIN">LOGIN</string>
     <string name="background_gradient">background_gradient</string>
-    <string name="username">Username</string>
-    <string name="username2">\t\t\tUsername</string>
-    <string name="password2">\t\t\tPassword</string>
-    <string name="email">\t\t\tE-Mail</string>
-    <string name="phone">\t\t\tPhone</string>
 </resources>
