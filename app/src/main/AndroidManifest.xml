@@ -13,10 +13,17 @@
         android:theme="@style/Theme.NICESTART"
         tools:targetApi="31">
         <activity
+            android:name=".MainActivity"
+            android:theme="@style/Base.Theme.NICESTART"
+            android:exported="true" />
+        <activity
+            android:name=".Register"
+            android:exported="true" />
+        <activity
             android:name=".Signup"
             android:exported="true"
             android:parentActivityName=".Login"
-            android:theme="@style/Theme.NICESTART.ActionBar"/>
+            android:theme="@style/Theme.NICESTART.ActionBar" />
         <activity
             android:name=".Login"
             android:exported="true">
