@@ -17,9 +17,6 @@
             android:theme="@style/Base.Theme.NICESTART"
             android:exported="true" />
         <activity
-            android:name=".Register"
-            android:exported="true" />
-        <activity
             android:name=".Signup"
             android:exported="true"
             android:parentActivityName=".Login"
