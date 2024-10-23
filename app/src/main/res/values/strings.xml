@@ -8,4 +8,7 @@
     <string name="register">REGISTER</string>
     <string name="LOGIN">LOGIN</string>
     <string name="background_gradient">background_gradient</string>
+    <string name="password2">"      Password"</string>
+    <string name="username">"      Username"</string>
+    <string name="email">"      Email"</string>
 </resources>
