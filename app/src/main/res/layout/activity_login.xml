@@ -35,6 +35,7 @@
         android:id="@+id/login"
         style="@style/buttonFlat"
         android:text="@string/LOGIN"
+        android:onClick="openMain"
         app:cornerRadius="8dp"
         app:layout_constraintBottom_toTopOf="@id/register"
         app:layout_constraintHorizontal_chainStyle="packed"

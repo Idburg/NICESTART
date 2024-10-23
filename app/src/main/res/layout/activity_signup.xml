@@ -37,7 +37,7 @@
     <Button
         android:id="@+id/register"
         android:text="@string/register"
-        android:onClick="openSignup"
+        android:onClick="openMain"
         app:cornerRadius="8dp"
         app:layout_constraintEnd_toEndOf="@id/guide2"
         app:layout_constraintStart_toStartOf="@id/guide1"
