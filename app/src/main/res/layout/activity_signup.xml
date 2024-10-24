@@ -9,12 +9,12 @@
     tools:context=".Login">
 
     <ImageView
-        android:id="@+id/girl"
+        android:id="@+id/hip"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:contentDescription="@string/background_gradient"
         android:scaleType="fitStart"
-        android:src="@drawable/girl"
+        android:src="@drawable/hipman"
         android:alpha="0.8"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
