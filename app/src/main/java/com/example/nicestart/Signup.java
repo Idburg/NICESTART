@@ -31,9 +31,10 @@ public class Signup extends AppCompatActivity {
         ImageView bHip = findViewById(R.id.hip);
 
         Glide.with(this)
-                .load("https://as2.ftcdn.net/v2/jpg/00/65/21/89/1000_F_65218950_8gGgy60Q1BFQvz13RLAJOCBtydFwJxFH.jpg")
+                .load(R.drawable.hipman)
                 .transition(DrawableTransitionOptions.withCrossFade(2000))
                 .centerCrop()
+                //.circleCrop()
                 .placeholder(new ColorDrawable(this.getResources().getColor(R.color.teal_700)))
                 .into(bHip);
 
