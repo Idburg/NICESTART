@@ -33,11 +33,11 @@ public class MainActivity extends AppCompatActivity {
         ImageView bFinger = findViewById(R.id.profile);
 
         Glide.with(this)
-                .load("https://as2.ftcdn.net/v2/jpg/00/65/21/89/1000_F_65218950_8gGgy60Q1BFQvz13RLAJOCBtydFwJxFH.jpg")
+                .load("https://cdn-icons-png.flaticon.com/512/25/25231.png")
                 .transition(DrawableTransitionOptions.withCrossFade(2000))
                 //.centerCrop()
                 .circleCrop()
-                .placeholder(new ColorDrawable(this.getResources().getColor(R.color.teal_700)))
+                .placeholder(new ColorDrawable(this.getResources().getColor(R.color.teal_200)))
                 .into(bFinger);
 
 

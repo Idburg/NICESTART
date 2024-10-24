@@ -13,4 +13,6 @@
     <string name="email">"      Email"</string>
     <string name="phone">"      Phone"</string>
     <string name="profile">PROFILE</string>
+    <string name="profile_name">Idlir Bregu</string>
+    <string name="github">Sígueme en <a href="https://github.com/Idburg">GitHub</a></string>
 </resources>
