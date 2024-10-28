@@ -30,16 +30,27 @@ entrada de texto.
 Se puede apreciar en ambas actividades la aparición de iconos a la izquierda del texto, lo cual se puede implementar
 con la propiedad app:startIconDrawable.
 
-Activity Profile
+![image](https://github.com/user-attachments/assets/efeafa3a-c69d-48ab-bfe8-8b1bcb5ec1ef)
+
+
+Activity Profile/Main
 ----------------
+Esta actividad no es más que un boceto para refactorizarlo en una nueva actividad Profile pero que actualmente ocupa el Main.
+Es un diseño muy sencillo y existe para probar el uso de la librería Glide para darle estilo a la imagen del avatar.
+
 ![image](https://github.com/user-attachments/assets/47c99314-35ae-42e4-bbb7-04fad33daad9)
 
-Code Snippets
+La funcionalidad del Glide se debe realizar en el archivo Java asociado con la actividad y,
+en este caso, tendrá el siguiente código adicional al ya generado:
+
+![image](https://github.com/user-attachments/assets/a2d42d87-c64d-4bc0-b85b-e2d30197e03c)
+
+Interactividad
 -------------
 
 ![image](https://github.com/user-attachments/assets/95f3fbff-2fa9-4cfd-8b60-613e77d27f0b)
 ![image](https://github.com/user-attachments/assets/eb309bfa-b0cc-49c6-9d87-4dd6a72d0bf1)
 ![image](https://github.com/user-attachments/assets/dc97ec8e-1d28-467d-bfae-f47467ae3cf2)
-![image](https://github.com/user-attachments/assets/a2d42d87-c64d-4bc0-b85b-e2d30197e03c)
+
 
 
