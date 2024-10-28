@@ -1,7 +1,8 @@
 PROYECTO NICESTART
 ==================
 El objetivo de este proyecto fue realizar el boceto de una aplicacion de registro básica para aprender
-a utilizar Android Studio, particularmente la implementación de layouts y la conectividad entre sí.
+a utilizar Android Studio, particularmente la implementación de layouts y la conectividad entre sí. En este proyecto se 
+ha utilizado el ConstraintLayout englobando todos los objetos para ajustar a medida las dimensiones de éstos.
 
 Activity Login
 --------------
@@ -21,8 +22,13 @@ ellos. Esto se puede realizar creando ficheros xml en la carpeta @drawable; en e
 
 Activity Signup
 ---------------
-El diseño de esta actividad es muy parecido al del activity logi
+El diseño de esta actividad es muy parecido al del activity login pero aquí se pueden apreciar más campos para la
+entrada de texto.
+
 ![image](https://github.com/user-attachments/assets/2f745b02-ea77-425d-9671-ec005648d774)
+
+Se puede apreciar en ambas actividades la aparición de iconos a la izquierda del texto, lo cual se puede implementar
+con la propiedad app:startIconDrawable.
 
 Activity Profile
 ----------------
