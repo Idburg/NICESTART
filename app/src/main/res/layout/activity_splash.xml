@@ -9,6 +9,13 @@
     tools:context=".Splash">
 
     <ImageView
+        android:id="@+id/backSplash"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageView
         android:id="@+id/logo"
         android:layout_width="150dp"
         android:layout_height="150dp"
@@ -26,7 +33,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/fjalla_one"
         android:text="@string/nicestart"
-        android:textColor="#C08620"
+        android:textColor="#373030"
         android:textSize="32sp"
         app:layout_constraintEnd_toEndOf="@id/main"
         app:layout_constraintStart_toStartOf="@id/main"

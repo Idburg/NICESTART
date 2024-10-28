@@ -1,14 +1,23 @@
 package com.example.nicestart;
 
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 
 public class Splash extends AppCompatActivity {
 
@@ -24,6 +33,26 @@ public class Splash extends AppCompatActivity {
         });
 
         openApp();
+
+        ImageView logo = (ImageView) findViewById(R.id.logo);
+        TextView appName = (TextView) findViewById(R.id.appName);
+
+        Animation newAnim = AnimationUtils.loadAnimation(this,R.anim.blink);
+        logo.startAnimation(newAnim);
+        appName.startAnimation(newAnim);
+
+        ImageView mSea = findViewById(R.id.backSplash);
+
+        Glide.with(this)
+                .load("https://images.pexels.com/photos/3483098/pexels-photo-3483098.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
+//                .load(R.drawable.girl)
+                .transition(DrawableTransitionOptions.withCrossFade(100))
+                .centerCrop()
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .placeholder(new ColorDrawable(this.getResources().getColor(R.color.teal_200)))
+//                .circleCrop()
+                .into(mSea);
+
     }
 
     private void openApp() {
