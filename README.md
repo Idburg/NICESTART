@@ -12,6 +12,12 @@ Android Studio. Se han realizado dos activites distintas teniendo en cuenta la o
 
 ![image](https://github.com/user-attachments/assets/fb6a7d9e-2738-4934-9cdb-6bf53276470d)
 
+Se puede apreciar que los colores están personalizados y el fondo de pantalla es un gradiente creado a partir de 
+ellos. Esto se puede realizar creando ficheros xml en la carpeta @drawable; en este caso siendo colors.xml y gradient.xml:
+
+![image](https://github.com/user-attachments/assets/1e6137dc-d024-47e0-a31e-243700c24324)
+
+![image](https://github.com/user-attachments/assets/a4ccd8fb-fed3-44c4-a871-85793b8804d8)
 
 Activity Signup
 ---------------
@@ -23,8 +29,7 @@ Activity Profile
 
 Code Snippets
 -------------
-![image](https://github.com/user-attachments/assets/1e6137dc-d024-47e0-a31e-243700c24324)
-![image](https://github.com/user-attachments/assets/a4ccd8fb-fed3-44c4-a871-85793b8804d8)
+
 ![image](https://github.com/user-attachments/assets/95f3fbff-2fa9-4cfd-8b60-613e77d27f0b)
 ![image](https://github.com/user-attachments/assets/eb309bfa-b0cc-49c6-9d87-4dd6a72d0bf1)
 ![image](https://github.com/user-attachments/assets/dc97ec8e-1d28-467d-bfae-f47467ae3cf2)
