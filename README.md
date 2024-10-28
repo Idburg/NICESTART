@@ -45,6 +45,11 @@ en este caso, tendrá el siguiente código adicional al ya generado:
 
 ![image](https://github.com/user-attachments/assets/a2d42d87-c64d-4bc0-b85b-e2d30197e03c)
 
+> Para utilizar Glide, se deben importan en build.gradle.kts(:app)
+
+> ![image](https://github.com/user-attachments/assets/9aedce3d-8115-48ee-bd25-9e304dafba59)
+
+
 Interactividad
 -------------
 
