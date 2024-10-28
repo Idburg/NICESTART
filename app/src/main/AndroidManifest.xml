@@ -15,6 +15,9 @@
         android:theme="@style/Theme.NICESTART"
         tools:targetApi="31">
         <activity
+            android:name=".splash"
+            android:exported="false" />
+        <activity
             android:name=".Profile"
             android:exported="true" />
         <activity
