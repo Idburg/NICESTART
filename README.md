@@ -8,7 +8,9 @@ Activity Login
 El diseño de esta actividad está realizado con componentes del Material Design proporiconados por defecto por
 Android Studio. Se han realizado dos activites distintas teniendo en cuenta la orientación del dispositivo:
 ![image](https://github.com/user-attachments/assets/463fb2fb-6265-4dc5-9452-3aae3d595746)
+
 ![image](https://github.com/user-attachments/assets/fb6a7d9e-2738-4934-9cdb-6bf53276470d)
+
 
 Activity Signup
 ---------------
