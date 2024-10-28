@@ -21,6 +21,7 @@ ellos. Esto se puede realizar creando ficheros xml en la carpeta @drawable; en e
 
 Activity Signup
 ---------------
+El diseño de esta actividad es muy parecido al del activity logi
 ![image](https://github.com/user-attachments/assets/2f745b02-ea77-425d-9671-ec005648d774)
 
 Activity Profile
