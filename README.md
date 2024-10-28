@@ -61,11 +61,23 @@ qué actividad lleva ActionBar y no. Para ello, se debe configurar el AndroidMan
 
 ![image](https://github.com/user-attachments/assets/eb309bfa-b0cc-49c6-9d87-4dd6a72d0bf1)
 
+En esta imagen del AndroidManifest se puede apreciar varias:
+* El uso de :parentActivityName para especificar donde el retorno de signup a login mediante una flecha en la ActionBar
+* La propiedad :exported = true para permitir la interactividad
+* La implementacion de temas específicos para cada actividad
+
 > Los temas para las ActionBars se encuentran, detallan y/o añaden en themes.xml
 > ![image](https://github.com/user-attachments/assets/566b89ab-8e72-446b-8306-1fdbadc17c1a)
 
+Una vez realizada la interactividad con ActionBar, se debe implementar código Java para las interacciones que requieren pulsar un botón.
+Para ello se debe utilizar un objeto de la clase Intent y englobar la acción en un método:
 
 ![image](https://github.com/user-attachments/assets/95f3fbff-2fa9-4cfd-8b60-613e77d27f0b)
+
+> Debe existir la propiedad onclick (o cualquier otra que se busca) igualada al nombre del método previamente en el xml de la actividad
+
+>![image](https://github.com/user-attachments/assets/df919b9c-c999-4393-8428-764b08ec9150)
+
 
 
 
