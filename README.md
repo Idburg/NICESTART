@@ -52,9 +52,13 @@ en este caso, tendrá el siguiente código adicional al ya generado:
 
 Interactividad
 -------------
+Dado que se buscaba añadir interactividad entre las actividades, lo primero que se hizo fue especificar qué botón lleva a qué sitio y
+qué actividad lleva ActionBar y no. Para ello, se debe configurar el AndroidManifest de la siguiente forma:
+
+![image](https://github.com/user-attachments/assets/eb309bfa-b0cc-49c6-9d87-4dd6a72d0bf1)
 
 ![image](https://github.com/user-attachments/assets/95f3fbff-2fa9-4cfd-8b60-613e77d27f0b)
-![image](https://github.com/user-attachments/assets/eb309bfa-b0cc-49c6-9d87-4dd6a72d0bf1)
+
 ![image](https://github.com/user-attachments/assets/dc97ec8e-1d28-467d-bfae-f47467ae3cf2)
 
 
