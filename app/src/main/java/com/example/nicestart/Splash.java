@@ -37,16 +37,18 @@ public class Splash extends AppCompatActivity {
         ImageView logo = (ImageView) findViewById(R.id.logo);
         TextView appName = (TextView) findViewById(R.id.appName);
 
-        Animation newAnim = AnimationUtils.loadAnimation(this,R.anim.blink);
-        logo.startAnimation(newAnim);
-        appName.startAnimation(newAnim);
+        Animation newAnimBlink = AnimationUtils.loadAnimation(this,R.anim.blink);
+        logo.startAnimation(newAnimBlink);
+
+        Animation newAnimRotate = AnimationUtils.loadAnimation(this,R.anim.rotate);
+        appName.startAnimation(newAnimRotate);
 
         ImageView mSea = findViewById(R.id.backSplash);
 
         Glide.with(this)
                 .load("https://images.pexels.com/photos/3483098/pexels-photo-3483098.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
 //                .load(R.drawable.girl)
-                .transition(DrawableTransitionOptions.withCrossFade(100))
+                .transition(DrawableTransitionOptions.withCrossFade(500))
                 .centerCrop()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .placeholder(new ColorDrawable(this.getResources().getColor(R.color.teal_200)))

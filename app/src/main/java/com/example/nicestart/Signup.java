@@ -35,7 +35,7 @@ public class Signup extends AppCompatActivity {
                 .transition(DrawableTransitionOptions.withCrossFade(2000))
                 .centerCrop()
                 //.circleCrop()
-                .placeholder(new ColorDrawable(this.getResources().getColor(R.color.teal_700)))
+                .placeholder(new ColorDrawable(this.getResources().getColor(R.color.purple_200)))
                 .into(bHip);
 
     }

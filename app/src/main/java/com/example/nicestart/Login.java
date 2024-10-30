@@ -35,7 +35,7 @@ public class Login extends AppCompatActivity {
                 .load(R.drawable.girl)
                 .transition(DrawableTransitionOptions.withCrossFade(2000))
                 .centerCrop()
-                .placeholder(new ColorDrawable(this.getResources().getColor(R.color.teal_200)))
+                .placeholder(new ColorDrawable(this.getResources().getColor(R.color.purple_200)))
                 .into(bGirl);
 
     }
