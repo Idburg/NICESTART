@@ -55,7 +55,7 @@ en este caso, tendrá el siguiente código adicional al ya generado:
 
 
 Interactividad
--------------
+--------------
 Dado que se buscaba añadir interactividad entre las actividades, lo primero que se hizo fue especificar qué botón lleva a qué sitio y
 qué actividad lleva ActionBar y no. Para ello, se debe configurar el AndroidManifest de la siguiente forma:
 
@@ -79,7 +79,9 @@ Para ello se debe utilizar un objeto de la clase Intent y englobar la acción en
 >![image](https://github.com/user-attachments/assets/df919b9c-c999-4393-8428-764b08ec9150)
 
 
-
-
+Animaciones
+------------
+con el objetivo de añadir fluidez a la aplicación, se ha explorado añadir animaciones mediante el propio Android Studio. Para ello,
+se deben crear ficheros XML en la carpeta anim
 
 
