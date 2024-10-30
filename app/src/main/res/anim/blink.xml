@@ -7,22 +7,21 @@
         android:pivotX="50%"
         android:fromXScale="0"
         android:fromYScale="0"
-        android:toXScale="1.75"
-        android:toYScale="1.75"
-        >
-    </scale>
+        android:toXScale="1.55"
+        android:toYScale="1.55"
+        />
+
     <translate
         android:duration="2000"
         android:fromYDelta="0"
-        android:toYDelta="-65%"
-        >
+        android:toYDelta="-50%"
+        />
 
-    </translate>
     <alpha
     android:duration="350"
     android:fromAlpha="0.0"
-    android:repeatCount="infinite"
+    android:repeatCount="8"
     android:repeatMode="reverse"
     android:toAlpha="1.0"
-    />
+        />
 </set>

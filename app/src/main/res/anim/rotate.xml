@@ -6,11 +6,17 @@
         android:fromDegrees="0"
         android:toDegrees="-360"
         android:pivotX="50%"
-        android:pivotY="50%">
-    </rotate>
+        android:pivotY="50%"
+        />
     <translate
         android:fromXDelta="-100%"
         android:toXDelta="0"
-        >
-    </translate>
+        />
+    <scale
+        android:toYScale="1.2"
+        android:toXScale="1.2"
+        android:fromYScale="0"
+        android:fromXScale="0"
+        />
+
 </set>

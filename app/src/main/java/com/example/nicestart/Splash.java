@@ -36,12 +36,16 @@ public class Splash extends AppCompatActivity {
 
         ImageView logo = (ImageView) findViewById(R.id.logo);
         TextView appName = (TextView) findViewById(R.id.appName);
+        TextView welcomeMssg = (TextView) findViewById(R.id.welcome);
 
         Animation newAnimBlink = AnimationUtils.loadAnimation(this,R.anim.blink);
         logo.startAnimation(newAnimBlink);
 
         Animation newAnimRotate = AnimationUtils.loadAnimation(this,R.anim.rotate);
         appName.startAnimation(newAnimRotate);
+
+        Animation newAnimZoom = AnimationUtils.loadAnimation(this,R.anim.zoom_in_out);
+        welcomeMssg.startAnimation(newAnimZoom);
 
         ImageView mSea = findViewById(R.id.backSplash);
 
