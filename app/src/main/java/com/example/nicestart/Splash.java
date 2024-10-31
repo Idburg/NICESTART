@@ -19,6 +19,8 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 
+import jp.wasabeef.glide.transformations.BlurTransformation;
+
 public class Splash extends AppCompatActivity {
 
     @Override
@@ -52,6 +54,7 @@ public class Splash extends AppCompatActivity {
         Glide.with(this)
                 .load("https://images.pexels.com/photos/3483098/pexels-photo-3483098.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
 //                .load(R.drawable.girl)
+                .transform(new BlurTransformation())
                 .transition(DrawableTransitionOptions.withCrossFade(500))
                 .centerCrop()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)

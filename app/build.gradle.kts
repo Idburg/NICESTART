@@ -40,7 +40,10 @@ dependencies {
     implementation(libs.activity)
     implementation(libs.constraintlayout)
 
+    implementation(libs.lottie);
+
     implementation(libs.glide)
+    implementation(libs.glide.transformations)
     annotationProcessor(libs.compiler)
 
     testImplementation(libs.junit)
