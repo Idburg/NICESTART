@@ -42,6 +42,7 @@ dependencies {
 
     implementation(libs.lottie);
 
+
     implementation(libs.glide)
     implementation(libs.glide.transformations)
     implementation(libs.swiperefreshlayout)
