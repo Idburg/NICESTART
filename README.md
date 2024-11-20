@@ -82,6 +82,17 @@ Para ello se debe utilizar un objeto de la clase Intent y englobar la acción en
 Animaciones
 ------------
 Con el objetivo de añadir fluidez a la aplicación, se ha explorado añadir animaciones mediante el propio Android Studio. Para ello,
-se deben crear ficheros XML en la carpeta anim
+se pueden crear ficheros XML en la carpeta anim:
 
+![image](https://github.com/user-attachments/assets/2503c727-09c7-4789-aace-5c2a3d0e6dec)
+
+Una vez visualizadas las animaciones, para traducirlo en código se puede realizar lo siguiente:
+
+![image](https://github.com/user-attachments/assets/fc79cffe-5cbb-4a9f-a8b1-505ee76c87ca)
+
+En este ejemplo se puede observar una animación de parpadeo o "blink" donde se agrupan tres animaciones distintas en una misma etiqueta 
+`<set>` para lograr el efecto ya descrito.
+> La etiqueta `<scale>` afecta el tamaño del objeto mediante 2 escalas, una para el eje X y otra para el eje Y
+
+![image](https://github.com/user-attachments/assets/4b794402-8580-4e5e-9610-201e41f7b5ce)
 
