@@ -93,6 +93,18 @@ Una vez visualizadas las animaciones, para traducirlo en código se puede realiz
 En este ejemplo se puede observar una animación de parpadeo o "blink" donde se agrupan tres animaciones distintas en una misma etiqueta 
 `<set>` para lograr el efecto ya descrito.
 > La etiqueta `<scale>` afecta el tamaño del objeto mediante 2 escalas, una para el eje X y otra para el eje Y
+>
+>> Las propiedades `toPivotX` y 'toPivotY' indican el punto de referencia por el cual se realizará la escala, que en este caso es el centro
+>
+> La etiqueta `<transform` afecta el desplazamiento que tendrá el objeto en los dos ejes
+>
+>> Los valores positivos en la variable Y hacen que el objeto se mueva hacia abajo
+> 
+> La etiqueta `<alpha>` afecta la opacidad del objeto
+> 
+>> Detro de ella se debe poner la propiedad `android:repeatMode="reverse"` para que parezca que está "parpadeando" el objeto
+
+Una vez hechas las animaciones, para implementarlas se debe utilizar AnimatioUtils de la siguiente forma:
 
 ![image](https://github.com/user-attachments/assets/4b794402-8580-4e5e-9610-201e41f7b5ce)
 
