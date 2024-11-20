@@ -81,7 +81,7 @@ Para ello se debe utilizar un objeto de la clase Intent y englobar la acción en
 
 Animaciones
 ------------
-con el objetivo de añadir fluidez a la aplicación, se ha explorado añadir animaciones mediante el propio Android Studio. Para ello,
+Con el objetivo de añadir fluidez a la aplicación, se ha explorado añadir animaciones mediante el propio Android Studio. Para ello,
 se deben crear ficheros XML en la carpeta anim
 
 
