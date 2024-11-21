@@ -9,7 +9,11 @@ Activity Login
 El diseño de esta actividad está realizado con componentes del Material Design proporiconados por defecto por
 Android Studio. Se han realizado dos activites distintas teniendo en cuenta la orientación del dispositivo:
 
+**Vista Perfil**
+
 ![image](https://github.com/user-attachments/assets/463fb2fb-6265-4dc5-9452-3aae3d595746)
+
+**Vista Panorama**
 
 ![image](https://github.com/user-attachments/assets/fb6a7d9e-2738-4934-9cdb-6bf53276470d)
 
@@ -23,6 +27,15 @@ ellos. Esto se puede realizar creando ficheros xml en la carpeta @drawable; en e
 En cuanto a los botones, se ha creado un fichero styles.xml en donde se han realizado las siguientes especificaciones:
 
 ![image](https://github.com/user-attachments/assets/dc97ec8e-1d28-467d-bfae-f47467ae3cf2)
+
+La funcionalidad del Glide, que reemplaza el gradiente, se debe realizar en el archivo Java asociado con la actividad y,
+en este caso, tendrá el siguiente código adicional al ya generado:
+
+![image](https://github.com/user-attachments/assets/749d4f7c-a3f8-4a66-ba51-374166c15e66)
+
+> Para utilizar Glide, se deben importan en build.gradle.kts(:app)
+
+> ![image](https://github.com/user-attachments/assets/9aedce3d-8115-48ee-bd25-9e304dafba59)
 
 Activity Signup
 ---------------
@@ -40,19 +53,24 @@ con la propiedad app:startIconDrawable.
 Activity Profile
 ----------------
 Esta actividad es un boceto de una ventana de Profile donde el usuario consultará sus datos personales.
-Es un diseño muy sencillo y existe para probar el uso de la librería Glide para darle estilo a la imagen del avatar.
+Es un diseño muy sencillo y existe para probar el uso de la librería de animaciones Lottie para darle estilo a la imagen del avatar.
 
-![image](https://github.com/user-attachments/assets/47c99314-35ae-42e4-bbb7-04fad33daad9)
+![image](https://github.com/user-attachments/assets/0855a88d-fb70-49c0-8df9-383c8a2361b6)
 
-La funcionalidad del Glide se debe realizar en el archivo Java asociado con la actividad y,
-en este caso, tendrá el siguiente código adicional al ya generado:
+> El enlace al GitHub se puede poner en el `strings.xml` de la siguiente forma:
+> ![image](https://github.com/user-attachments/assets/e6fe1714-ef00-44f8-8d0f-ecfb33d30960)
 
-![image](https://github.com/user-attachments/assets/a2d42d87-c64d-4bc0-b85b-e2d30197e03c)
 
-> Para utilizar Glide, se deben importan en build.gradle.kts(:app)
+Previamente se debe importar Lottie al proyecto de la misma forma que el Glide. Para más detalles, consulta [la documentación original][1]
 
-> ![image](https://github.com/user-attachments/assets/9aedce3d-8115-48ee-bd25-9e304dafba59)
+[1]: https://airbnb.io/lottie/#/android "doc"
 
+Para implementarlo, se debe primero descargar el archivo `.json` de la web de Lottie, crear una carpeta *raw* dentro de *res* e introducir aquí el archivo.
+Una vez hecho, en el xml de la actividad donde se busca implementarlo, se introduce lo siguiente:
+
+![image](https://github.com/user-attachments/assets/265f7a94-d225-4fdf-b0f1-e9aaf7e4b322)
+
+>Se puede poner `app:lottie_loop = "true"` para que se repita el bucle infinitamente
 
 Activity Splash
 ---------------
@@ -61,10 +79,44 @@ Esta actividad es la pantalla de carga de la aplicación y sirve como un "testin
 ![image](https://github.com/user-attachments/assets/71bea20d-6f31-452b-af16-b4148fd8390f)
 
 
+Activity Main
+-------------
+Esta actividad, por muy simple que parezca tiene muchísimos componentes dinámicos, tanto para la imagen de la web como para la ActionBar
+
+![image](https://github.com/user-attachments/assets/cbf94cb0-abfb-4049-a1ce-f0a69c282f12)
+
+Para empezar, la imagen proviene de una pagina web que por cada vez que se refresca se cambia, por lo cual en el .xml se debe contener
+en un *SwipeRefreshLayout* que proporcionará esa función al usuario.
+
+![image](https://github.com/user-attachments/assets/9a272844-61d3-4d54-9f38-464827a4c513)
+
+Dinámicamente, se implemeta en el `MainActivity.java` de la siguiente forma:
+
+![image](https://github.com/user-attachments/assets/e872185c-6637-42d2-bf34-796040f3dfcb)
+
+![image](https://github.com/user-attachments/assets/4dfb4581-b92f-4d87-85d2-981958d4130f)
+
+>Esta interfaz es necesaria especificarla, aunque se puede prescindir de los mensajes del Snackbar
+
+En cuanto a la ActionBar, aparte de configurarlo en el Manifest (más detalles en el apartado de interactividad), se deben configurar varios aspectos:
+
+![image](https://github.com/user-attachments/assets/131154a9-e38f-49f9-b08d-0cba37959a44)
+
+Lo primero, se debe crear un fichero XML que contenga las opciones del ActionBar en una carpeta llamada menu en el res. Después, como se puede apreciar, se deben
+añadir tanto las dos opciones del actionbar como las subopciones de Settings en distintos items con sus propios IDs y títulos. Dinámicamente, se debe realizar de 
+la siguiente manera:
+
+![image](https://github.com/user-attachments/assets/8d26511d-736b-4deb-9e9a-19c9c226619a)
+> El menú de contexto para *ActionBar*
+
+![image](https://github.com/user-attachments/assets/228256bc-920d-4cb0-9e77-a584010369c0)
+> El menú de opciones para *Settings* 
+
+
 Interactividad
 --------------
 Dado que se buscaba añadir interactividad entre las actividades, lo primero que se hizo fue especificar qué botón lleva a qué sitio y
-qué actividad lleva ActionBar y no. Para ello, se debe configurar el AndroidManifest de la siguiente forma:
+qué actividad lleva ActionBar y no. Para ello, se debe configurar el `AndroidManifest.xml` de la siguiente forma:
 
 ![image](https://github.com/user-attachments/assets/eb309bfa-b0cc-49c6-9d87-4dd6a72d0bf1)
 
@@ -86,8 +138,8 @@ Para ello se debe utilizar un objeto de la clase Intent y englobar la acción en
 >![image](https://github.com/user-attachments/assets/df919b9c-c999-4393-8428-764b08ec9150)
 
 
-Animaciones
-------------
+Animaciones Sencillas 
+---------------------
 Con el objetivo de añadir fluidez a la aplicación, se ha explorado añadir animaciones mediante el propio Android Studio. Para ello,
 se pueden crear ficheros XML en la carpeta anim:
 
