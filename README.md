@@ -68,17 +68,20 @@ Esta actividad, por muy simple que parezca tiene muchísimos componentes dinámi
 ![image](https://github.com/user-attachments/assets/cbf94cb0-abfb-4049-a1ce-f0a69c282f12)
 
 Para empezar, la imagen proviene de una pagina web que por cada vez que se refresca se cambia, por lo cual en el .xml se debe contener
-en 
+en un *SwipeRefreshLayout* que proporcionará esa función al usuario.
 
 ![image](https://github.com/user-attachments/assets/9a272844-61d3-4d54-9f38-464827a4c513)
 
+Dinámicamente, se implemeta en el `MainActivity.java` de la siguiente forma:
+
 ![image](https://github.com/user-attachments/assets/e872185c-6637-42d2-bf34-796040f3dfcb)
 
+En cuanto a la ActionBar, aparte de configurarlo en el Manifest (más detalles en el apartado de interactividad
 
 Interactividad
 --------------
 Dado que se buscaba añadir interactividad entre las actividades, lo primero que se hizo fue especificar qué botón lleva a qué sitio y
-qué actividad lleva ActionBar y no. Para ello, se debe configurar el AndroidManifest de la siguiente forma:
+qué actividad lleva ActionBar y no. Para ello, se debe configurar el `AndroidManifest.xml` de la siguiente forma:
 
 ![image](https://github.com/user-attachments/assets/eb309bfa-b0cc-49c6-9d87-4dd6a72d0bf1)
 
