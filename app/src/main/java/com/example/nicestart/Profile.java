@@ -25,7 +25,7 @@ public class Profile extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-
+        /*
         ImageView bFinger = findViewById(R.id.profile);
 
         Glide.with(this)
@@ -35,6 +35,6 @@ public class Profile extends AppCompatActivity {
                 .circleCrop()
                 .placeholder(new ColorDrawable(this.getResources().getColor(R.color.teal_200)))
                 .into(bFinger);
-
+        */
     }
 }
