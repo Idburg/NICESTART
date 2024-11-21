@@ -219,15 +219,82 @@ Esta actividad, por muy simple que parezca tiene muchísimos componentes dinámi
 Para empezar, la imagen proviene de una pagina web que por cada vez que se refresca se cambia, por lo cual en el .xml se debe contener
 en un *SwipeRefreshLayout* que proporcionará esa función al usuario.
 
-![image](https://github.com/user-attachments/assets/9a272844-61d3-4d54-9f38-464827a4c513)
+```xml
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/myswipe"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
+
+        <WebView
+            android:id="@+id/imageweb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+        <TextView
+            android:id="@+id/buenas"
+            android:layout_marginTop="24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/buenos_d_as"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageweb"
+            />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+```
+> Nota: el TextView está por si el enlace a la web es erróneo, sino estará siempre detrás del WebView
+> El WebView es un contenedor de contenido extraido por páginas web. Se debe habilitar la funcionalidad en le manifest (ver **Interactividad**)
 
 Dinámicamente, se implemeta en el `MainActivity.java` de la siguiente forma:
 
-![image](https://github.com/user-attachments/assets/e872185c-6637-42d2-bf34-796040f3dfcb)
+```java
+TextView mycontext = (TextView) findViewById(R.id.buenas);
+        registerForContextMenu(mycontext);
 
-![image](https://github.com/user-attachments/assets/4dfb4581-b92f-4d87-85d2-981958d4130f)
+        swipeLayout = findViewById(R.id.myswipe);
+        swipeLayout.setOnRefreshListener(mOnRefreshListener);
 
->Esta interfaz es necesaria especificarla, aunque se puede prescindir de los mensajes del Snackbar
+        miViewWeb = (WebView) findViewById(R.id.imageweb);
+        WebSettings webSettings = miViewWeb.getSettings();
+        webSettings.setLoadWithOverviewMode(true);
+        webSettings.setUseWideViewPort(true);
+        miViewWeb.loadUrl("https://thispersondoesnotexist.com");
+```
+```java
+protected SwipeRefreshLayout.OnRefreshListener
+            mOnRefreshListener = new SwipeRefreshLayout.OnRefreshListener() {
+
+        @Override
+        public void onRefresh(){
+
+            final ConstraintLayout mLayout = findViewById(R.id.myMainConstraint);
+
+            Snackbar snackbar = Snackbar
+                    .make(mLayout,"fancy a Snack while you refresh?",Snackbar.LENGTH_SHORT)
+                    .setAction("UNDO", new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view){
+                            Snackbar snackbar1 = Snackbar.make(mLayout, "Action is restored!",Snackbar.LENGTH_SHORT);
+                            snackbar1.show();
+                        }
+                    });
+            snackbar.show();
+
+            miViewWeb.reload();
+            swipeLayout.setRefreshing(false);
+        }
+    };
+```
+
+>Esta interfaz es necesaria especificarla, aunque se puede prescindir de los mensajes del Snackbar (no recomendable)
 
 En cuanto a la ActionBar, aparte de configurarlo en el Manifest (más detalles en el apartado de interactividad), se deben configurar varios aspectos:
 
