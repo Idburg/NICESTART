@@ -61,6 +61,20 @@ Esta actividad es la pantalla de carga de la aplicación y sirve como un "testin
 ![image](https://github.com/user-attachments/assets/71bea20d-6f31-452b-af16-b4148fd8390f)
 
 
+Activity Main
+-------------
+Esta actividad, por muy simple que parezca tiene muchísimos componentes dinámicos, tanto para la imagen de la web como para la ActionBar
+
+![image](https://github.com/user-attachments/assets/cbf94cb0-abfb-4049-a1ce-f0a69c282f12)
+
+Para empezar, la imagen proviene de una pagina web que por cada vez que se refresca se cambia, por lo cual en el .xml se debe contener
+en 
+
+![image](https://github.com/user-attachments/assets/9a272844-61d3-4d54-9f38-464827a4c513)
+
+![image](https://github.com/user-attachments/assets/e872185c-6637-42d2-bf34-796040f3dfcb)
+
+
 Interactividad
 --------------
 Dado que se buscaba añadir interactividad entre las actividades, lo primero que se hizo fue especificar qué botón lleva a qué sitio y
