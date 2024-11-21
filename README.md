@@ -28,6 +28,15 @@ En cuanto a los botones, se ha creado un fichero styles.xml en donde se han real
 
 ![image](https://github.com/user-attachments/assets/dc97ec8e-1d28-467d-bfae-f47467ae3cf2)
 
+La funcionalidad del Glide, que reemplaza el gradiente, se debe realizar en el archivo Java asociado con la actividad y,
+en este caso, tendrá el siguiente código adicional al ya generado:
+
+![image](https://github.com/user-attachments/assets/749d4f7c-a3f8-4a66-ba51-374166c15e66)
+
+> Para utilizar Glide, se deben importan en build.gradle.kts(:app)
+
+> ![image](https://github.com/user-attachments/assets/9aedce3d-8115-48ee-bd25-9e304dafba59)
+
 Activity Signup
 ---------------
 El diseño de esta actividad es muy parecido al del activity login pero aquí se pueden apreciar más campos para la
@@ -44,18 +53,11 @@ con la propiedad app:startIconDrawable.
 Activity Profile
 ----------------
 Esta actividad es un boceto de una ventana de Profile donde el usuario consultará sus datos personales.
-Es un diseño muy sencillo y existe para probar el uso de la librería Glide para darle estilo a la imagen del avatar.
+Es un diseño muy sencillo y existe para probar el uso de la librería de animaciones Lottie para darle estilo a la imagen del avatar.
 
-![image](https://github.com/user-attachments/assets/47c99314-35ae-42e4-bbb7-04fad33daad9)
+![image](https://github.com/user-attachments/assets/0855a88d-fb70-49c0-8df9-383c8a2361b6)
 
-La funcionalidad del Glide se debe realizar en el archivo Java asociado con la actividad y,
-en este caso, tendrá el siguiente código adicional al ya generado:
 
-![image](https://github.com/user-attachments/assets/a2d42d87-c64d-4bc0-b85b-e2d30197e03c)
-
-> Para utilizar Glide, se deben importan en build.gradle.kts(:app)
-
-> ![image](https://github.com/user-attachments/assets/9aedce3d-8115-48ee-bd25-9e304dafba59)
 
 
 Activity Splash
