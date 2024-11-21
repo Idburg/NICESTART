@@ -298,17 +298,124 @@ protected SwipeRefreshLayout.OnRefreshListener
 
 En cuanto a la ActionBar, aparte de configurarlo en el Manifest (más detalles en el apartado de interactividad), se deben configurar varios aspectos:
 
-![image](https://github.com/user-attachments/assets/131154a9-e38f-49f9-b08d-0cba37959a44)
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/item2"
+        android:title="@string/settings"
+        app:showAsAction="never"
+        >
+        <menu>
+            <item
+                android:id="@+id/item3"
+                android:title="@string/bottom_app_bar"
+                app:showAsAction="never" />
+
+            <item
+                android:id="@+id/item4"
+                android:title="@string/bottom_navigation"
+                app:showAsAction="never" />
+
+
+            <item
+                android:id="@+id/item5"
+                android:title="@string/signout"
+                app:showAsAction="never"
+                android:icon="@drawable/ic_door"/>
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/item1"
+        android:title="@string/copy"
+        app:showAsAction="ifRoom"
+        >
+    </item>
+</menu>
+```
 > Se pueden añadir iconos a las opciones al igual que con los botones
 
 Lo primero, se debe crear un fichero XML que contenga las opciones del ActionBar en una carpeta llamada menu en el res. Después, como se puede apreciar, se deben
 añadir tanto las dos opciones del actionbar como las subopciones de Settings en distintos items con sus propios IDs y títulos. Dinámicamente, se debe realizar de 
 la siguiente manera:
 
-![image](https://github.com/user-attachments/assets/8d26511d-736b-4deb-9e9a-19c9c226619a)
+```java
+@Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo)
+    {
+        getMenuInflater().inflate(R.menu.menu_context, menu);
+    }
+
+@Override
+    public boolean onContextItemSelected(MenuItem item)
+    {
+        int id = item.getItemId();
+
+        if(id == R.id.item1)
+        {
+            Toast toast = Toast.makeText(this,"Infecting",Toast.LENGTH_LONG);
+            toast.show();
+        }
+        if(id == R.id.item2)
+        {
+            Toast toast2 = Toast.makeText(this,"Fixing",Toast.LENGTH_LONG);
+            toast2.show();
+
+
+            Intent intent = new Intent(this, Profile.class);
+            startActivity(intent);
+
+        }
+
+
+        return super.onContextItemSelected(item);
+    }
+```
 > El menú de contexto para *ActionBar*
 
-![image](https://github.com/user-attachments/assets/228256bc-920d-4cb0-9e77-a584010369c0)
+```java
+@Override
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        getMenuInflater().inflate(R.menu.menu_aptbar, menu);
+        return true;
+    }
+
+@Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        int id = item.getItemId();
+
+        if(id == R.id.item1)
+        {
+            Toast toast = Toast.makeText(this, "Infecting", Toast.LENGTH_LONG);
+            toast.show();
+        }
+        if(id == R.id.item2)
+        {
+            Toast toast = Toast.makeText(this, "Fixing", Toast.LENGTH_LONG);
+            toast.show();
+        }
+        if(id == R.id.item3)
+        {
+            Toast toast = Toast.makeText(this, "Profile", Toast.LENGTH_LONG);
+            toast.show();
+        }
+        if(id == R.id.item4)
+        {
+            Toast toast = Toast.makeText(this, "Item4", Toast.LENGTH_LONG);
+            toast.show();
+        }
+        if(id == R.id.item5)
+        {
+            showAlertDialogButtonClicked(MainActivity.this);
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+```
 > El menú de opciones para *Settings* 
 
 En este último se utiliza una función que lanza una alerta al pulsar la quinta opción, presentando al usuario con 3 opciones:
@@ -377,7 +484,58 @@ Interactividad
 Dado que se buscaba añadir interactividad entre las actividades, lo primero que se hizo fue especificar qué botón lleva a qué sitio y
 qué actividad lleva ActionBar y no. Para ello, se debe configurar el `AndroidManifest.xml` de la siguiente forma:
 
-![image](https://github.com/user-attachments/assets/eb309bfa-b0cc-49c6-9d87-4dd6a72d0bf1)
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.NICESTART"
+        tools:targetApi="31">
+        <activity
+            android:name=".Splash"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Profile"
+            android:exported="true" />
+        <activity
+            android:name=".HorizontalLogin"
+            android:exported="true" />
+        <activity
+            android:name=".Signup"
+            android:exported="true"
+            android:parentActivityName=".Login"
+            android:theme="@style/Theme.NICESTART.ActionBar" />
+        <activity
+            android:name=".Login"
+            android:exported="true"/>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.NICESTART.ActionBar" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>
+```
 
 En esta imagen del AndroidManifest se puede apreciar varias:
 * El uso de :parentActivityName para especificar donde el retorno de signup a login mediante una flecha en la ActionBar
@@ -385,17 +543,52 @@ En esta imagen del AndroidManifest se puede apreciar varias:
 * La implementacion de temas específicos para cada actividad
 
 > Los temas para las ActionBars se encuentran, detallan y/o añaden en themes.xml
-> ![image](https://github.com/user-attachments/assets/566b89ab-8e72-446b-8306-1fdbadc17c1a)
+```xml
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.NICESTART" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <style name="Theme.NICESTART" parent="Base.Theme.NICESTART"/>
+    <style name="Theme.NICESTART.ActionBar" parent="Theme.Material3.DayNight"/>
+</resources>
+```
 
 Una vez realizada la interactividad con ActionBar, se debe implementar código Java para las interacciones que requieren pulsar un botón.
 Para ello se debe utilizar un objeto de la clase Intent y englobar la acción en un método:
 
-![image](https://github.com/user-attachments/assets/95f3fbff-2fa9-4cfd-8b60-613e77d27f0b)
+```java
+public void openMain(View v) {
+        Intent intent = new Intent(Login.this, MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+
+    }
+
+public void openSignup (View v) {
+        Intent intent = new Intent(Login.this, Signup.class);
+        startActivity(intent);
+    }
+```
 
 > Debe existir la propiedad onclick (o cualquier otra que se busca) igualada al nombre del método previamente en el xml de la actividad
+> El ejemplo está tomado del `Login.java`
 
->![image](https://github.com/user-attachments/assets/df919b9c-c999-4393-8428-764b08ec9150)
-
+```xml
+<Button
+        android:id="@+id/register"
+        android:text="@string/register"
+        android:onClick="openSignup"
+        app:cornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="@id/guide2"
+        app:layout_constraintStart_toStartOf="@id/guide1"
+        app:layout_constraintTop_toBottomOf="@id/login"
+        style="@style/buttonOutlined" />
+```
 
 Animaciones Sencillas 
 ---------------------
@@ -406,7 +599,35 @@ se pueden crear ficheros XML en la carpeta anim:
 
 Una vez visualizadas las animaciones, para traducirlo en código se puede realizar lo siguiente:
 
-![image](https://github.com/user-attachments/assets/fc79cffe-5cbb-4a9f-a8b1-505ee76c87ca)
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fillAfter="true">
+    <scale
+        android:duration="2000"
+        android:pivotY="50%"
+        android:pivotX="50%"
+        android:fromXScale="0"
+        android:fromYScale="0"
+        android:toXScale="1.55"
+        android:toYScale="1.55"
+        />
+
+    <translate
+        android:duration="2000"
+        android:fromYDelta="0"
+        android:toYDelta="-50%"
+        />
+
+    <alpha
+    android:duration="350"
+    android:fromAlpha="0.0"
+    android:repeatCount="8"
+    android:repeatMode="reverse"
+    android:toAlpha="1.0"
+        />
+</set>
+```
 
 En este ejemplo se puede observar una animación de parpadeo o "blink" donde se agrupan tres animaciones distintas en una misma etiqueta 
 `<set>` para lograr el efecto ya descrito.
@@ -422,7 +643,21 @@ En este ejemplo se puede observar una animación de parpadeo o "blink" donde se 
 > 
 >> Detro de ella se debe poner la propiedad `android:repeatMode="reverse"` para que parezca que está "parpadeando" el objeto
 
-Una vez hechas las animaciones, para implementarlas se debe utilizar AnimatioUtils de la siguiente forma:
+Una vez hechas las animaciones, para implementarlas se debe utilizar AnimationUtils de la siguiente forma:
 
-![image](https://github.com/user-attachments/assets/4b794402-8580-4e5e-9610-201e41f7b5ce)
+```java
+ImageView logo = (ImageView) findViewById(R.id.logo);
+TextView appName = (TextView) findViewById(R.id.appName);
+TextView welcomeMssg = (TextView) findViewById(R.id.welcome);
+
+Animation newAnimBlink = AnimationUtils.loadAnimation(this,R.anim.blink);
+logo.startAnimation(newAnimBlink);
+
+Animation newAnimRotate = AnimationUtils.loadAnimation(this,R.anim.rotate);
+appName.startAnimation(newAnimRotate);
+
+Animation newAnimZoom = AnimationUtils.loadAnimation(this,R.anim.zoom_in_out);
+welcomeMssg.startAnimation(newAnimZoom);
+
+```
 
