@@ -6,7 +6,6 @@
         <item name="android:windowIsTranslucent">true</item>
     </style>
 
-
-    <style name="Theme.NICESTART" parent="Base.Theme.NICESTART" />
-    <style name="Theme.NICESTART.ActionBar" parent="Theme.Material3.DayNight" />
+    <style name="Theme.NICESTART" parent="Base.Theme.NICESTART"/>
+    <style name="Theme.NICESTART.ActionBar" parent="Theme.Material3.DayNight"/>
 </resources>

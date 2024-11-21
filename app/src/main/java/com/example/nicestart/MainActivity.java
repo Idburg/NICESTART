@@ -2,7 +2,9 @@ package com.example.nicestart;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.ContextMenu;
@@ -18,6 +20,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.graphics.Insets;
@@ -27,6 +31,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity {
@@ -39,6 +44,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#FF0000"))); // Color rojo
+        }
 
         TextView mycontext = (TextView) findViewById(R.id.buenas);
         registerForContextMenu(mycontext);
@@ -57,9 +67,59 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+    }
 
+    public void showAlertDialogButtonClicked(MainActivity mainActivity) {
 
+        // setup the alert builder
+        MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(this);
 
+//        //el dialogo estandar tiene título/icono pero podemos sustituirlo por un XML a medida
+        builder.setTitle("Achtung!");
+        builder.setMessage("Where do you go?");
+        builder.setIcon(R.drawable.user_icon);
+        builder.setCancelable(false);
+
+        // un XML a medida para el diálogo
+        //builder.setView(getLayoutInflater().inflate(R.layout.alertdialog_view, null));
+
+        // add the buttons
+
+        builder.setPositiveButton("Scrolling", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // do something like...
+                Intent intent = new Intent(MainActivity.this, Profile.class);
+                startActivity(intent);
+                dialog.dismiss();
+
+            }
+        });
+
+        builder.setNegativeButton("Do nothing", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+                // do something like...
+
+                dialog.dismiss();
+            }
+        });
+
+        builder.setNeutralButton("Other", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+                // do something like...
+                System.exit(0);
+
+                dialog.dismiss();
+            }
+        });
+
+        // create and show the alert dialog
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 
     @Override
@@ -75,14 +135,21 @@ public class MainActivity extends AppCompatActivity {
 
         if(id == R.id.item1)
         {
-            Toast toast = Toast.makeText(this, "Infecting", Toast.LENGTH_LONG);
+            Toast toast = Toast.makeText(this,"Infecting",Toast.LENGTH_LONG);
             toast.show();
         }
         if(id == R.id.item2)
         {
-            Toast toast = Toast.makeText(this, "Fixing", Toast.LENGTH_LONG);
-            toast.show();
+            Toast toast2 = Toast.makeText(this,"Fixing",Toast.LENGTH_LONG);
+            toast2.show();
+
+
+            Intent intent = new Intent(this, Profile.class);
+            startActivity(intent);
+
         }
+
+
         return super.onContextItemSelected(item);
     }
 
@@ -100,17 +167,29 @@ public class MainActivity extends AppCompatActivity {
 
         if(id == R.id.item1)
         {
-            Toast toast = Toast.makeText(this,"Infecting",Toast.LENGTH_LONG);
+            Toast toast = Toast.makeText(this, "Infecting", Toast.LENGTH_LONG);
             toast.show();
         }
         if(id == R.id.item2)
         {
-            Toast toast2 = Toast.makeText(this,"Fixing",Toast.LENGTH_LONG);
-            toast2.show();
-
-            Intent intent = new Intent(this, Profile.class);
-            startActivity(intent);
+            Toast toast = Toast.makeText(this, "Fixing", Toast.LENGTH_LONG);
+            toast.show();
         }
+        if(id == R.id.item3)
+        {
+            Toast toast = Toast.makeText(this, "Profile", Toast.LENGTH_LONG);
+            toast.show();
+        }
+        if(id == R.id.item4)
+        {
+            Toast toast = Toast.makeText(this, "Item4", Toast.LENGTH_LONG);
+            toast.show();
+        }
+        if(id == R.id.item5)
+        {
+            showAlertDialogButtonClicked(MainActivity.this);
+        }
+
         return super.onOptionsItemSelected(item);
     }
 /*
