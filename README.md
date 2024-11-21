@@ -57,6 +57,10 @@ Es un diseño muy sencillo y existe para probar el uso de la librería de animac
 
 ![image](https://github.com/user-attachments/assets/0855a88d-fb70-49c0-8df9-383c8a2361b6)
 
+> El enlace al GitHub se puede poner en el `strings.xml` de la siguiente forma:
+> ![image](https://github.com/user-attachments/assets/e6fe1714-ef00-44f8-8d0f-ecfb33d30960)
+
+
 Previamente se debe importar Lottie al proyecto de la misma forma que el Glide. Para más detalles, consulta [la documentación original][1]
 
 [1]: https://airbnb.io/lottie/#/android "doc"
