@@ -9,7 +9,11 @@ Activity Login
 El diseño de esta actividad está realizado con componentes del Material Design proporiconados por defecto por
 Android Studio. Se han realizado dos activites distintas teniendo en cuenta la orientación del dispositivo:
 
+**Vista Perfil**
+
 ![image](https://github.com/user-attachments/assets/463fb2fb-6265-4dc5-9452-3aae3d595746)
+
+**Vista Panorama**
 
 ![image](https://github.com/user-attachments/assets/fb6a7d9e-2738-4934-9cdb-6bf53276470d)
 
@@ -76,7 +80,24 @@ Dinámicamente, se implemeta en el `MainActivity.java` de la siguiente forma:
 
 ![image](https://github.com/user-attachments/assets/e872185c-6637-42d2-bf34-796040f3dfcb)
 
-En cuanto a la ActionBar, aparte de configurarlo en el Manifest (más detalles en el apartado de interactividad
+![image](https://github.com/user-attachments/assets/4dfb4581-b92f-4d87-85d2-981958d4130f)
+
+>Esta interfaz es necesaria especificarla, aunque se puede prescindir de los mensajes del Snackbar
+
+En cuanto a la ActionBar, aparte de configurarlo en el Manifest (más detalles en el apartado de interactividad), se deben configurar varios aspectos:
+
+![image](https://github.com/user-attachments/assets/131154a9-e38f-49f9-b08d-0cba37959a44)
+
+Lo primero, se debe crear un fichero XML que contenga las opciones del ActionBar en una carpeta llamada menu en el res. Después, como se puede apreciar, se deben
+añadir tanto las dos opciones del actionbar como las subopciones de Settings en distintos items con sus propios IDs y títulos. Dinámicamente, se debe realizar de 
+la siguiente manera:
+
+![image](https://github.com/user-attachments/assets/8d26511d-736b-4deb-9e9a-19c9c226619a)
+> El menú de contexto para *ActionBar*
+
+![image](https://github.com/user-attachments/assets/228256bc-920d-4cb0-9e77-a584010369c0)
+> El menú de opciones para *Settings* 
+
 
 Interactividad
 --------------
