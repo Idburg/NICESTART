@@ -20,7 +20,20 @@ Android Studio. Se han realizado dos activites distintas teniendo en cuenta la o
 Se puede apreciar que los colores están personalizados y el fondo de pantalla es un gradiente creado a partir de 
 ellos. Esto se puede realizar creando ficheros xml en la carpeta @drawable; en este caso siendo colors.xml y gradient.xml:
 
-![image](https://github.com/user-attachments/assets/1e6137dc-d024-47e0-a31e-243700c24324)
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="fucsia_200">#F12369</color>
+    <color name="fucsia_700">#4D0A20</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>
+```
 
 ![image](https://github.com/user-attachments/assets/a4ccd8fb-fed3-44c4-a871-85793b8804d8)
 
@@ -101,6 +114,7 @@ Dinámicamente, se implemeta en el `MainActivity.java` de la siguiente forma:
 En cuanto a la ActionBar, aparte de configurarlo en el Manifest (más detalles en el apartado de interactividad), se deben configurar varios aspectos:
 
 ![image](https://github.com/user-attachments/assets/131154a9-e38f-49f9-b08d-0cba37959a44)
+> Se pueden añadir iconos a las opciones al igual que con los botones
 
 Lo primero, se debe crear un fichero XML que contenga las opciones del ActionBar en una carpeta llamada menu en el res. Después, como se puede apreciar, se deben
 añadir tanto las dos opciones del actionbar como las subopciones de Settings en distintos items con sus propios IDs y títulos. Dinámicamente, se debe realizar de 
@@ -112,6 +126,66 @@ la siguiente manera:
 ![image](https://github.com/user-attachments/assets/228256bc-920d-4cb0-9e77-a584010369c0)
 > El menú de opciones para *Settings* 
 
+En este último se utiliza una función que lanza una alerta al pulsar la quinta opción, presentando al usuario con 3 opciones:
+
+![image](https://github.com/user-attachments/assets/706fbb44-5438-4c34-a6c9-d7d30233420e)
+
+Para codificar lo siguiente en java, se ha utilizado la siguiente función, la cual lanza un Intent cuando se pulsa "Proceed":
+
+```java
+ public void showAlertDialogButtonClicked(MainActivity mainActivity) {
+
+        // setup the alert builder
+        MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(this);
+
+//        //el dialogo estandar tiene título/icono pero podemos sustituirlo por un XML a medida
+        builder.setTitle("Precaución!");
+        builder.setMessage("Dónde desea ir?");
+        builder.setIcon(R.drawable.user_icon);
+        builder.setCancelable(false);
+
+        // un XML a medida para el diálogo
+        //builder.setView(getLayoutInflater().inflate(R.layout.alertdialog_view, null));
+
+        // add the buttons
+
+        builder.setPositiveButton("Proceed", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // do something like...
+                Intent intent = new Intent(MainActivity.this, Profile.class);
+                startActivity(intent);
+                dialog.dismiss();
+
+            }
+        });
+
+        builder.setNegativeButton("Do nothing", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+                // do something like...
+
+                dialog.dismiss();
+            }
+        });
+
+        builder.setNeutralButton("Other", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+                // do something like...
+                System.exit(0);
+
+                dialog.dismiss();
+            }
+        });
+
+        // create and show the alert dialog
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+```
 
 Interactividad
 --------------
