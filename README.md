@@ -57,8 +57,16 @@ Es un diseño muy sencillo y existe para probar el uso de la librería de animac
 
 ![image](https://github.com/user-attachments/assets/0855a88d-fb70-49c0-8df9-383c8a2361b6)
 
+Previamente se debe importar Lottie al proyecto de la misma forma que el Glide. Para más detalles, consulta [la documentación original][1]
 
+[1]: https://airbnb.io/lottie/#/android "doc"
 
+Para implementarlo, se debe primero descargar el archivo `.json` de la web de Lottie, crear una carpeta *raw* dentro de *res* e introducir aquí el archivo.
+Una vez hecho, en el xml de la actividad donde se busca implementarlo, se introduce lo siguiente:
+
+![image](https://github.com/user-attachments/assets/265f7a94-d225-4fdf-b0f1-e9aaf7e4b322)
+
+>Se puede poner `app:lottie_loop = "true"` para que se repita el bucle infinitamente
 
 Activity Splash
 ---------------
@@ -126,8 +134,8 @@ Para ello se debe utilizar un objeto de la clase Intent y englobar la acción en
 >![image](https://github.com/user-attachments/assets/df919b9c-c999-4393-8428-764b08ec9150)
 
 
-Animaciones
-------------
+Animaciones Sencillas 
+---------------------
 Con el objetivo de añadir fluidez a la aplicación, se ha explorado añadir animaciones mediante el propio Android Studio. Para ello,
 se pueden crear ficheros XML en la carpeta anim:
 
