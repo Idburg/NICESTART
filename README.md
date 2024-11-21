@@ -34,8 +34,16 @@ ellos. Esto se puede realizar creando ficheros xml en la carpeta @drawable; en e
     <color name="white">#FFFFFFFF</color>
 </resources>
 ```
-
-![image](https://github.com/user-attachments/assets/a4ccd8fb-fed3-44c4-a871-85793b8804d8)
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <gradient
+        android:startColor="@color/fucsia_200"
+        android:endColor="@color/purple_200"
+        android:angle="270">
+        </gradient>
+</shape>
+```
 
 En cuanto a los botones, se ha creado un fichero styles.xml en donde se han realizado las siguientes especificaciones:
 
