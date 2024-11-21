@@ -82,7 +82,7 @@ ImageView bGirl = findViewById(R.id.girl);
                 .into(bGirl);
 ```
 
-> Para utilizar Glide, se deben importan en build.gradle.kts(:app)
+> Para utilizar Glide, se deben importar en build.gradle.kts(:app)
 ```kts
 dependencies {
 
