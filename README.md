@@ -37,9 +37,9 @@ con la propiedad app:startIconDrawable.
 ![image](https://github.com/user-attachments/assets/efeafa3a-c69d-48ab-bfe8-8b1bcb5ec1ef)
 
 
-Activity Profile/Main
+Activity Profile
 ----------------
-Esta actividad no es más que un boceto para refactorizarlo en una nueva actividad Profile pero que actualmente ocupa el Main.
+Esta actividad es un boceto de una ventana de Profile donde el usuario consultará sus datos personales.
 Es un diseño muy sencillo y existe para probar el uso de la librería Glide para darle estilo a la imagen del avatar.
 
 ![image](https://github.com/user-attachments/assets/47c99314-35ae-42e4-bbb7-04fad33daad9)
@@ -53,6 +53,8 @@ en este caso, tendrá el siguiente código adicional al ya generado:
 
 > ![image](https://github.com/user-attachments/assets/9aedce3d-8115-48ee-bd25-9e304dafba59)
 
+
+Activity 
 
 Interactividad
 --------------
