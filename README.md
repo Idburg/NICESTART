@@ -37,9 +37,9 @@ con la propiedad app:startIconDrawable.
 ![image](https://github.com/user-attachments/assets/efeafa3a-c69d-48ab-bfe8-8b1bcb5ec1ef)
 
 
-Activity Profile/Main
+Activity Profile
 ----------------
-Esta actividad no es más que un boceto para refactorizarlo en una nueva actividad Profile pero que actualmente ocupa el Main.
+Esta actividad es un boceto de una ventana de Profile donde el usuario consultará sus datos personales.
 Es un diseño muy sencillo y existe para probar el uso de la librería Glide para darle estilo a la imagen del avatar.
 
 ![image](https://github.com/user-attachments/assets/47c99314-35ae-42e4-bbb7-04fad33daad9)
@@ -52,6 +52,13 @@ en este caso, tendrá el siguiente código adicional al ya generado:
 > Para utilizar Glide, se deben importan en build.gradle.kts(:app)
 
 > ![image](https://github.com/user-attachments/assets/9aedce3d-8115-48ee-bd25-9e304dafba59)
+
+
+Activity Splash
+---------------
+Esta actividad es la pantalla de carga de la aplicación y sirve como un "testing ground" para el uso de animaciones, que se detallará más después.
+
+![image](https://github.com/user-attachments/assets/71bea20d-6f31-452b-af16-b4148fd8390f)
 
 
 Interactividad
@@ -81,7 +88,30 @@ Para ello se debe utilizar un objeto de la clase Intent y englobar la acción en
 
 Animaciones
 ------------
-con el objetivo de añadir fluidez a la aplicación, se ha explorado añadir animaciones mediante el propio Android Studio. Para ello,
-se deben crear ficheros XML en la carpeta anim
+Con el objetivo de añadir fluidez a la aplicación, se ha explorado añadir animaciones mediante el propio Android Studio. Para ello,
+se pueden crear ficheros XML en la carpeta anim:
 
+![image](https://github.com/user-attachments/assets/2503c727-09c7-4789-aace-5c2a3d0e6dec)
+
+Una vez visualizadas las animaciones, para traducirlo en código se puede realizar lo siguiente:
+
+![image](https://github.com/user-attachments/assets/fc79cffe-5cbb-4a9f-a8b1-505ee76c87ca)
+
+En este ejemplo se puede observar una animación de parpadeo o "blink" donde se agrupan tres animaciones distintas en una misma etiqueta 
+`<set>` para lograr el efecto ya descrito.
+> La etiqueta `<scale>` afecta el tamaño del objeto mediante 2 escalas, una para el eje X y otra para el eje Y
+>
+>> Las propiedades `toPivotX` y 'toPivotY' indican el punto de referencia por el cual se realizará la escala, que en este caso es el centro
+>
+> La etiqueta `<transform` afecta el desplazamiento que tendrá el objeto en los dos ejes
+>
+>> Los valores positivos en la variable Y hacen que el objeto se mueva hacia abajo
+> 
+> La etiqueta `<alpha>` afecta la opacidad del objeto
+> 
+>> Detro de ella se debe poner la propiedad `android:repeatMode="reverse"` para que parezca que está "parpadeando" el objeto
+
+Una vez hechas las animaciones, para implementarlas se debe utilizar AnimatioUtils de la siguiente forma:
+
+![image](https://github.com/user-attachments/assets/4b794402-8580-4e5e-9610-201e41f7b5ce)
 
