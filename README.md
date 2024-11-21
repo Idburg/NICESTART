@@ -54,7 +54,12 @@ en este caso, tendrá el siguiente código adicional al ya generado:
 > ![image](https://github.com/user-attachments/assets/9aedce3d-8115-48ee-bd25-9e304dafba59)
 
 
-Activity 
+Activity Splash
+---------------
+Esta actividad es la pantalla de carga de la aplicación y sirve como un "testing ground" para el uso de animaciones, que se detallará más después.
+
+![image](https://github.com/user-attachments/assets/71bea20d-6f31-452b-af16-b4148fd8390f)
+
 
 Interactividad
 --------------
