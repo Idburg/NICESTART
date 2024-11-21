@@ -147,8 +147,27 @@ entrada de texto.
 Se puede apreciar en ambas actividades la aparición de iconos a la izquierda del texto, lo cual se puede implementar
 con la propiedad app:startIconDrawable.
 
-![image](https://github.com/user-attachments/assets/efeafa3a-c69d-48ab-bfe8-8b1bcb5ec1ef)
+```xml
+<com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        app:layout_constraintEnd_toEndOf="@id/guide2"
+        app:layout_constraintStart_toStartOf="@id/guide1"
+        app:layout_constraintTop_toBottomOf="@id/icon_img"
+        app:startIconDrawable="@drawable/user_icon"
+        >
 
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:alpha="0.6"
+            android:background="@color/white"
+            android:hint="@string/username" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+```
 
 Activity Profile
 ----------------
@@ -158,7 +177,8 @@ Es un diseño muy sencillo y existe para probar el uso de la librería de animac
 ![image](https://github.com/user-attachments/assets/0855a88d-fb70-49c0-8df9-383c8a2361b6)
 
 > El enlace al GitHub se puede poner en el `strings.xml` de la siguiente forma:
-> ![image](https://github.com/user-attachments/assets/e6fe1714-ef00-44f8-8d0f-ecfb33d30960)
+> 
+>  `<string name="github">Sígueme en <a href="https://github.com/Idburg">GitHub</a></string>`
 
 
 Previamente se debe importar Lottie al proyecto de la misma forma que el Glide. Para más detalles, consulta [la documentación original][1]
@@ -168,7 +188,18 @@ Previamente se debe importar Lottie al proyecto de la misma forma que el Glide. 
 Para implementarlo, se debe primero descargar el archivo `.json` de la web de Lottie, crear una carpeta *raw* dentro de *res* e introducir aquí el archivo.
 Una vez hecho, en el xml de la actividad donde se busca implementarlo, se introduce lo siguiente:
 
-![image](https://github.com/user-attachments/assets/265f7a94-d225-4fdf-b0f1-e9aaf7e4b322)
+```xml
+<com.airbnb.lottie.LottieAnimationView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:id="@+id/profile"
+        app:lottie_rawRes="@raw/user_anim"
+        app:lottie_autoPlay="true"
+        app:layout_constraintEnd_toStartOf="@id/guide2"
+        app:layout_constraintStart_toEndOf="@id/guide1"
+        app:layout_constraintTop_toBottomOf="@+id/tituloMain"
+    />
+```
 
 >Se puede poner `app:lottie_loop = "true"` para que se repita el bucle infinitamente
 
