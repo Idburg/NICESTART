@@ -47,16 +47,95 @@ ellos. Esto se puede realizar creando ficheros xml en la carpeta @drawable; en e
 
 En cuanto a los botones, se ha creado un fichero styles.xml en donde se han realizado las siguientes especificaciones:
 
-![image](https://github.com/user-attachments/assets/dc97ec8e-1d28-467d-bfae-f47467ae3cf2)
+```xml
+<<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="buttonFlat">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:backgroundTint">@color/white</item>
+        <item name="android:textColor">@color/fucsia_700</item>
+    </style>
+
+    <style name="buttonOutlined" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="cornerRadius">8dp</item>
+        <item name="strokeColor">@android:color/white</item>
+    </style>
+</resources>
+```
 
 La funcionalidad del Glide, que reemplaza el gradiente, se debe realizar en el archivo Java asociado con la actividad y,
 en este caso, tendrá el siguiente código adicional al ya generado:
 
-![image](https://github.com/user-attachments/assets/749d4f7c-a3f8-4a66-ba51-374166c15e66)
+```java
+ImageView bGirl = findViewById(R.id.girl);
+
+        Glide.with(this)
+                .load(R.drawable.girl)
+                .transition(DrawableTransitionOptions.withCrossFade(2000))
+                .centerCrop()
+                .placeholder(new ColorDrawable(this.getResources().getColor(R.color.purple_200)))
+                .into(bGirl);
+```
 
 > Para utilizar Glide, se deben importan en build.gradle.kts(:app)
+```kts
+dependencies {
 
-> ![image](https://github.com/user-attachments/assets/9aedce3d-8115-48ee-bd25-9e304dafba59)
+    implementation(libs.appcompat)
+    implementation(libs.material)
+    implementation(libs.activity)
+    implementation(libs.constraintlayout)
+
+    implementation(libs.lottie)
+
+    implementation(libs.glide)
+    implementation(libs.glide.transformations)
+    implementation(libs.swiperefreshlayout)
+    annotationProcessor(libs.compiler)
+
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.ext.junit)
+    androidTestImplementation(libs.espresso.core)
+    
+}
+```
+```toml
+[versions]
+agp = "8.6.0"
+compiler = "4.14.2"
+glide = "4.16.0"
+glideTransformations = "4.3.0"
+junit = "4.13.2"
+junitVersion = "1.2.1"
+espressoCore = "3.6.1"
+appcompat = "1.7.0"
+lottie = "6.6.0"
+material = "1.12.0"
+activity = "1.9.2"
+constraintlayout = "2.1.4"
+swiperefreshlayout = "1.1.0"
+
+[libraries]
+compiler = { module = "com.github.bumptech.glide:compiler", version.ref = "compiler" }
+glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
+glide-transformations = { module = "jp.wasabeef:glide-transformations", version.ref = "glideTransformations" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+lottie = { module = "com.airbnb.android:lottie", version.ref = "lottie" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+swiperefreshlayout = { group = "androidx.swiperefreshlayout", name = "swiperefreshlayout", version.ref = "swiperefreshlayout" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+```
 
 Activity Signup
 ---------------
