@@ -1,6 +1,7 @@
 package com.example.nicestart;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
@@ -29,6 +30,18 @@ public class Login extends AppCompatActivity {
             return insets;
         });
 
+        int orientation = getResources().getConfiguration().orientation;
+        if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            Intent intent = new Intent(this, HorizontalLogin.class);
+            startActivity(intent);
+            finish(); // Optionally finish the current activity
+        } else if (orientation == Configuration.ORIENTATION_PORTRAIT) {
+            Intent intent = new Intent(this, Login.class);
+            startActivity(intent);
+            finish(); // Optionally finish the current activity
+        }
+
+
         ImageView bGirl = findViewById(R.id.girl);
 
         Glide.with(this)
@@ -39,8 +52,6 @@ public class Login extends AppCompatActivity {
                 .into(bGirl);
 
     }
-
-    
 
     public void openMain(View v) {
         Intent intent = new Intent(Login.this, MainActivity.class);
