@@ -102,7 +102,8 @@ ImageView bGirl = findViewById(R.id.girl);
                 .into(bGirl);
 ```
 
-> Para utilizar Glide, se deben importar en build.gradle.kts(:app)
+Para utilizar Glide, o cualquier librería externa, se deben importar en build.gradle.kts(Module:app)
+
 ```kts
 dependencies {
 
@@ -113,6 +114,10 @@ dependencies {
 
     implementation(libs.lottie)
 
+    implementation (libs.com.squareup.okhttp3.okhttp)
+    implementation (libs.retrofit)
+    implementation (libs.converter.gson)
+
     implementation(libs.glide)
     implementation(libs.glide.transformations)
     implementation(libs.swiperefreshlayout)
@@ -121,7 +126,7 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
-    
+
 }
 ```
 ```toml
