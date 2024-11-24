@@ -33,7 +33,7 @@ if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
     finish();
         }
 ```
-> Nota: es muy recomendado utilizar sólo una única vista para esto dado que en ese caso Android lo hace ya de por sí siempre
+> Nota: es muy recomendable utilizar sólo una única vista para esto dado que en ese caso Android lo hace ya de por sí siempre
 > que se esté utilizando ConstraintLayout o incluso LinearLayout (ver [documentación][1])
 
 [1]: https://developer.android.com/develop/ui/views/layout/responsive-adaptive-design-with-views
