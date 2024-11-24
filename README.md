@@ -3,7 +3,7 @@ PROYECTO NICESTART
 El objetivo de este proyecto fue realizar el boceto de una aplicacion de registro básica para aprender
 a utilizar Android Studio, particularmente la implementación de layouts y la conectividad entre sí. En este proyecto se 
 ha utilizado el ConstraintLayout englobando todos los objetos para ajustar a medida las dimensiones de éstos. Además, se explora 
-el uso de varias animaciones, Toast y SnackBar y además alertas para mejorar la interactividad con el usuario.
+el uso de varias animaciones, Toast, SnackBar y alertas para mejorar la interactividad con el usuario.
 
 Activity Login
 --------------
