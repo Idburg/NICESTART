@@ -3,7 +3,7 @@ PROYECTO NICESTART
 El objetivo de este proyecto fue realizar el boceto de una aplicacion de registro básica para aprender
 a utilizar Android Studio, particularmente la implementación de layouts y la conectividad entre sí. En este proyecto se 
 ha utilizado el ConstraintLayout englobando todos los objetos para ajustar a medida las dimensiones de éstos. Además, se explora 
-el uso de varias animaciones, Toast y SnackBar y además alertas para mejorar la interactividad con el usuario.
+el uso de varias animaciones, Toast, SnackBar y alertas para mejorar la interactividad con el usuario.
 
 Activity Login
 --------------
@@ -17,6 +17,26 @@ Android Studio. Se han realizado dos activites distintas teniendo en cuenta la o
 **Vista Panorama**
 
 ![image](https://github.com/user-attachments/assets/fb6a7d9e-2738-4934-9cdb-6bf53276470d)
+
+Para cambiar entre las dos activites en este caso particular, se debe implementar el siguiente código en el método `onCreate()`
+de *ambas*:
+
+```java
+int orientation = getResources().getConfiguration().orientation;
+if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+    Intent intent = new Intent(this, HorizontalLogin.class);
+    startActivity(intent);
+    finish();
+} else if (orientation == Configuration.ORIENTATION_PORTRAIT) {
+    Intent intent = new Intent(this, Login.class);
+    startActivity(intent);
+    finish();
+        }
+```
+> Nota: es muy recomendable utilizar sólo una única vista para esto dado que en ese caso Android lo hace ya de por sí siempre
+> que se esté utilizando ConstraintLayout o incluso LinearLayout (ver [documentación][1])
+
+[1]: https://developer.android.com/develop/ui/views/layout/responsive-adaptive-design-with-views
 
 Se puede apreciar que los colores están personalizados y el fondo de pantalla es un gradiente creado a partir de 
 ellos. Esto se puede realizar creando ficheros xml en la carpeta @drawable; en este caso siendo colors.xml y gradient.xml:
@@ -82,7 +102,8 @@ ImageView bGirl = findViewById(R.id.girl);
                 .into(bGirl);
 ```
 
-> Para utilizar Glide, se deben importar en build.gradle.kts(:app)
+Para utilizar Glide, o cualquier librería externa, se deben importar en build.gradle.kts(Module:app)
+
 ```kts
 dependencies {
 
@@ -93,6 +114,10 @@ dependencies {
 
     implementation(libs.lottie)
 
+    implementation (libs.com.squareup.okhttp3.okhttp)
+    implementation (libs.retrofit)
+    implementation (libs.converter.gson)
+
     implementation(libs.glide)
     implementation(libs.glide.transformations)
     implementation(libs.swiperefreshlayout)
@@ -101,7 +126,7 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
-    
+
 }
 ```
 ```toml
@@ -182,9 +207,9 @@ Es un diseño muy sencillo y existe para probar el uso de la librería de animac
 >  `<string name="github">Sígueme en <a href="https://github.com/Idburg">GitHub</a></string>`
 
 
-Previamente se debe importar Lottie al proyecto de la misma forma que el Glide. Para más detalles, consulta [la documentación original][1]
+Previamente se debe importar Lottie al proyecto de la misma forma que el Glide. Para más detalles, consulta [la documentación original][2]
 
-[1]: https://airbnb.io/lottie/#/android "doc"
+[2]: https://airbnb.io/lottie/#/android "doc"
 
 Para implementarlo, se debe primero descargar el archivo `.json` de la web de Lottie, crear una carpeta *raw* dentro de *res* e introducir aquí el archivo.
 Una vez hecho, en el xml de la actividad donde se busca implementarlo, se introduce lo siguiente:
@@ -516,7 +541,8 @@ qué actividad lleva ActionBar y no. Para ello, se debe configurar el `AndroidMa
             android:exported="true" />
         <activity
             android:name=".HorizontalLogin"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="landscape"/>
         <activity
             android:name=".Signup"
             android:exported="true"
@@ -524,7 +550,8 @@ qué actividad lleva ActionBar y no. Para ello, se debe configurar el `AndroidMa
             android:theme="@style/Theme.NICESTART.ActionBar" />
         <activity
             android:name=".Login"
-            android:exported="true"/>
+            android:exported="true"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -542,6 +569,8 @@ En esta imagen del AndroidManifest se puede apreciar varias:
 * El uso de :parentActivityName para especificar donde el retorno de signup a login mediante una flecha en la ActionBar
 * La propiedad :exported = true para permitir la interactividad
 * La implementacion de temas específicos para cada actividad
+* El uso de `android:screenOrientation` para fijar la orientación del `activity_login.xml` y del `activity_horizontal_login.xml`
+* El uso de la etiqueta `<uses-permission>` para que nuestra aplicación pueda acceder al internet
 
 > Los temas para las ActionBars se encuentran, detallan y/o añaden en themes.xml
 ```xml
@@ -576,7 +605,7 @@ public void openSignup (View v) {
     }
 ```
 
-> Debe existir la propiedad onclick (o cualquier otra que se busca) igualada al nombre del método previamente en el xml de la actividad
+> Debe existir la propiedad onclick (o cualquier otra que se busca) igualada al nombre del método previamente en el xml de la actividad. 
 > El ejemplo está tomado del `Login.java`
 
 ```xml
