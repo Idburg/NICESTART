@@ -1,4 +1,4 @@
-package com.example.nicestart;
+package com.example.nicestart.ui;
 
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
@@ -14,6 +14,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
+import com.example.nicestart.R;
 
 public class Signup extends AppCompatActivity {
 

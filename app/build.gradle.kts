@@ -40,8 +40,11 @@ dependencies {
     implementation(libs.activity)
     implementation(libs.constraintlayout)
 
-    implementation(libs.lottie);
+    implementation(libs.lottie)
 
+    implementation (libs.com.squareup.okhttp3.okhttp)
+    implementation (libs.retrofit)
+    implementation (libs.converter.gson)
 
     implementation(libs.glide)
     implementation(libs.glide.transformations)
