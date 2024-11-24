@@ -565,6 +565,7 @@ En esta imagen del AndroidManifest se puede apreciar varias:
 * La propiedad :exported = true para permitir la interactividad
 * La implementacion de temas específicos para cada actividad
 * El uso de `android:screenOrientation` para fijar la orientación del `activity_login.xml` y del `activity_horizontal_login.xml`
+* El uso de la etiqueta `<uses-permission>` para que nuestra aplicación pueda acceder al internet
 
 > Los temas para las ActionBars se encuentran, detallan y/o añaden en themes.xml
 ```xml
