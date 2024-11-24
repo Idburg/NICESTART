@@ -599,7 +599,7 @@ public void openSignup (View v) {
     }
 ```
 
-> Debe existir la propiedad onclick (o cualquier otra que se busca) igualada al nombre del método previamente en el xml de la actividad
+> Debe existir la propiedad onclick (o cualquier otra que se busca) igualada al nombre del método previamente en el xml de la actividad. 
 > El ejemplo está tomado del `Login.java`
 
 ```xml
