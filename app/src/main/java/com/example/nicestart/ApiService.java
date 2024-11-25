@@ -1,6 +1,4 @@
-package com.example.nicestart.network;
-
-import com.example.nicestart.models.LoginRequest;
+package com.example.nicestart;
 
 import retrofit2.Call;
 import retrofit2.http.Body;

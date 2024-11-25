@@ -1,4 +1,4 @@
-package com.example.nicestart.models;
+package com.example.nicestart;
 
 public class LoginRequest {
     private String username;

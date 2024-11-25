@@ -9,21 +9,22 @@
     tools:context=".Login">
 
     <ImageView
-        android:id="@+id/hip"
+        android:id="@+id/girl"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:contentDescription="@string/background_gradient"
+        android:src="@drawable/girl"
         android:scaleType="fitStart"
-        android:src="@drawable/hipman"
         android:alpha="0.8"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
+    <!---->
 
     <ImageView
         android:id="@+id/icon_img"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_marginTop="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:contentDescription="@string/money_icon"
         android:src="@drawable/ic_launcher_foreground"
         app:layout_constraintBottom_toTopOf="@id/name"
@@ -31,25 +32,47 @@
         app:layout_constraintStart_toStartOf="@id/guide1"
         app:layout_constraintTop_toTopOf="@id/main" />
 
-
-        />
+    <Button
+        android:id="@+id/login"
+        style="@style/buttonFlat"
+        android:text="@string/LOGIN"
+        android:onClick="openMain"
+        app:cornerRadius="8dp"
+        app:layout_constraintBottom_toTopOf="@id/register"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintEnd_toEndOf="@id/guide2"
+        app:layout_constraintStart_toStartOf="@id/guide1"
+        app:layout_constraintTop_toBottomOf="@id/pass"
+         />
 
     <Button
         android:id="@+id/register"
         android:text="@string/register"
-        android:onClick="openMain"
+        android:onClick="openSignup"
         app:cornerRadius="8dp"
         app:layout_constraintEnd_toEndOf="@id/guide2"
         app:layout_constraintStart_toStartOf="@id/guide1"
-        app:layout_constraintTop_toBottomOf="@id/phone"
+        app:layout_constraintTop_toBottomOf="@id/login"
         style="@style/buttonOutlined" />
-
+<!--
+    <Button
+        android:id="@+id/register"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/register"
+        android:backgroundTint="#0000FF"
+        app:cornerRadius="8dp"
+        app:layout_constraintStart_toStartOf="@id/main"
+        app:layout_constraintEnd_toEndOf="@id/main"
+        app:layout_constraintBottom_toBottomOf="@id/main"
+        />
+-->
     <androidx.constraintlayout.widget.Guideline
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:id="@+id/guide1"
-        app:layout_constraintGuide_percent="0.15"
+        app:layout_constraintGuide_percent="0.25"
         />
 
     <androidx.constraintlayout.widget.Guideline
@@ -57,21 +80,22 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:id="@+id/guide2"
-        app:layout_constraintGuide_percent="0.85"
+        app:layout_constraintGuide_percent="0.75"
         />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="@id/guide2"
         app:layout_constraintStart_toStartOf="@id/guide1"
         app:layout_constraintTop_toBottomOf="@id/icon_img"
         app:startIconDrawable="@drawable/user_icon"
         >
 
-        <EditText
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:alpha="0.6"
@@ -91,7 +115,7 @@
         app:passwordToggleEnabled="true"
         app:startIconDrawable="@drawable/key_icon">
 
-        <EditText
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -103,46 +127,7 @@
 
             />
 
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/email"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="@id/guide2"
-        app:layout_constraintStart_toStartOf="@id/guide1"
-        app:layout_constraintTop_toBottomOf="@id/pass"
-        app:startIconDrawable="@drawable/email_icon">
-
-        <EditText
-            android:id="@+id/mail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:alpha="0.6"
-            android:background="@color/white"
-            android:hint="@string/email"
-            />
-        >
-
-    </com.google.android.material.textfield.TextInputLayout>
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/phone"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="@id/guide2"
-        app:layout_constraintStart_toStartOf="@id/guide1"
-        app:layout_constraintTop_toBottomOf="@id/email"
-        app:startIconDrawable="@drawable/phone_icon">
-
-        <EditText
-            android:id="@+id/telephone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:alpha="0.6"
-            android:background="@color/white"
-            android:hint="@string/phone"
-            />
-        >
 
     </com.google.android.material.textfield.TextInputLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
+

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient"
-    tools:context=".ui.Login">
+    tools:context=".Login">
 
     <ImageView
         android:id="@+id/girl"
@@ -17,7 +17,6 @@
         android:alpha="0.8"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
-    <!--android:src="@drawable/girl"-->
 
     <ImageView
         android:id="@+id/icon_img"
@@ -93,7 +92,7 @@
         app:startIconDrawable="@drawable/user_icon"
         >
 
-        <EditText
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -114,7 +113,7 @@
         app:passwordToggleEnabled="true"
         app:startIconDrawable="@drawable/key_icon">
 
-        <EditText
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

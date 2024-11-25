@@ -1,4 +1,4 @@
-package com.example.nicestart.ui;
+package com.example.nicestart;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -24,7 +24,6 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
-import com.example.nicestart.R;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.snackbar.Snackbar;
 
