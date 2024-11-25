@@ -75,8 +75,8 @@ public class MainActivity extends AppCompatActivity {
         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(this);
 
 //        //el dialogo estandar tiene título/icono pero podemos sustituirlo por un XML a medida
-        builder.setTitle("Achtung!");
-        builder.setMessage("Where do you go?");
+        builder.setTitle("Precaución!");
+        builder.setMessage("Dónde desea ir?");
         builder.setIcon(R.drawable.user_icon);
         builder.setCancelable(false);
 
@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
 
         // add the buttons
 
-        builder.setPositiveButton("Scrolling", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton("Proceed", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 // do something like...

@@ -40,8 +40,7 @@ dependencies {
     implementation(libs.activity)
     implementation(libs.constraintlayout)
 
-    implementation(libs.lottie);
-
+    implementation(libs.lottie)
 
     implementation(libs.glide)
     implementation(libs.glide.transformations)
@@ -51,7 +50,5 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
-
-
 
 }

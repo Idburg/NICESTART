@@ -2,15 +2,9 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/item1"
+        android:id="@+id/item2"
         android:title="@string/settings"
         app:showAsAction="never"
-        />
-
-    <item
-        android:id="@+id/item2"
-        android:title="@string/copy"
-        app:showAsAction="ifRoom"
         >
         <menu>
             <item
@@ -30,5 +24,12 @@
                 app:showAsAction="never"
                 android:icon="@drawable/ic_door"/>
         </menu>
+    </item>
+
+    <item
+        android:id="@+id/item1"
+        android:title="@string/copy"
+        app:showAsAction="ifRoom"
+        >
     </item>
 </menu>
