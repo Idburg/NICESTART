@@ -17,12 +17,13 @@
         android:alpha="0.8"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
+    <!--android:src="@drawable/girl"-->
 
     <ImageView
         android:id="@+id/icon_img"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_marginTop="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:contentDescription="@string/money_icon"
         android:src="@drawable/ic_launcher_foreground"
         app:layout_constraintBottom_toTopOf="@id/name"

@@ -37,6 +37,15 @@ public class Login extends AppCompatActivity {
             return insets;
         });
 
+        ImageView bGirl = findViewById(R.id.girl);
+
+        Glide.with(this)
+                .load(R.drawable.girl)
+                .transition(DrawableTransitionOptions.withCrossFade(2000))
+                .centerCrop()
+                .placeholder(new ColorDrawable(this.getResources().getColor(R.color.purple_200)))
+                .into(bGirl);
+        /*
         Button loginButton = findViewById(R.id.login);
         TextInputEditText usernameField = findViewById(R.id.username);
         TextInputEditText passwordField = findViewById(R.id.password);
@@ -64,18 +73,7 @@ public class Login extends AppCompatActivity {
                 }
             });
         });
-
-
-        ImageView bGirl = findViewById(R.id.girl);
-
-        Glide.with(this)
-                .load(R.drawable.girl)
-                .transition(DrawableTransitionOptions.withCrossFade(2000))
-                .centerCrop()
-                .placeholder(new ColorDrawable(this.getResources().getColor(R.color.purple_200)))
-                .into(bGirl);
-
-
+        */
     }
 
     public void openMain(View v) {
