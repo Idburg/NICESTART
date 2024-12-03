@@ -276,8 +276,8 @@ en un *SwipeRefreshLayout* que proporcionará esa función al usuario.
             />
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 ```
-> Nota: el TextView está por si el enlace a la web es erróneo, sino estará siempre detrás del WebView
-> El WebView es un contenedor de contenido extraido por páginas web. Se debe habilitar la funcionalidad en le manifest (ver **Interactividad**)
+> Nota: el TextView está por si el enlace a la web es erróneo, sino estará siempre detrás del WebView,
+> que es un contenedor de contenido extraido por páginas web. Se debe habilitar la funcionalidad en el manifest (ver **Interactividad**)
 
 Dinámicamente, se implemeta en el `MainActivity.java` de la siguiente forma:
 
