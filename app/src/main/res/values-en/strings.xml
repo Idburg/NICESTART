@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">NICESTART</string>
+    <string name="money_icon">money</string>
+    <string name="name">name</string>
+    <string name="password">pass</string>
+    <string name="register">register</string>
+    <string name="background_gradient">back_gradient</string>
+    <string name="password2">other_pass</string>
+    <string name="username">username</string>
 </resources>

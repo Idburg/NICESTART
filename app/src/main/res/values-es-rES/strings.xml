@@ -4,4 +4,8 @@
     <string name="money_icon">icono_dinero</string>
     <string name="name">nombre</string>
     <string name="password">contraseña</string>
+    <string name="register">registrar</string>
+    <string name="background_gradient">gradiente_fondo</string>
+    <string name="password2">contra2</string>
+    <string name="username">nombre_usuario</string>
 </resources>
