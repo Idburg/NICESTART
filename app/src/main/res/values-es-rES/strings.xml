@@ -8,5 +8,14 @@
     <string name="background_gradient">gradiente_fondo</string>
     <string name="password2">contra2</string>
     <string name="username">nombre_usuario</string>
+    <string name="phone">movil</string>
+    <string name="profile">perfil</string>
+    <string name="profile_name">nombre_perfil</string>
+    <string name="estudiante">estudiante</string>
+    <string name="welcome">bienvenido</string>
+    <string name="buenos_d_as">buenos_dias</string>
+    <string name="buenos_d_as">buenos_d_as</string>
     <string name="settings">ajustes</string>
+    <string name="copy">copiar</string>
+    <string name="signout">salir_de_cuenta</string>
 </resources>
