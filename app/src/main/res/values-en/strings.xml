@@ -11,12 +11,10 @@
     <string name="phone">phone</string>
     <string name="profile">profile</string>
     <string name="profile_name">profile_name</string>
-    <string name="profile_name">profile_name</string>
     <string name="estudiante">student</string>
-    <string name="welcome">welcome</string>
+    <string name="welcome">Welcome!</string>
     <string name="buenos_d_as">good morning</string>
     <string name="settings">settings</string>
-    <string name="copy">copy</string>
     <string name="copy">copy</string>
     <string name="signout">signout</string>
 </resources>
