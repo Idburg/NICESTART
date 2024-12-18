@@ -8,4 +8,5 @@
     <string name="background_gradient">back_gradient</string>
     <string name="password2">other_pass</string>
     <string name="username">username</string>
+    <string name="settings">settings</string>
 </resources>

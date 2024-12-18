@@ -8,4 +8,5 @@
     <string name="background_gradient">gradiente_fondo</string>
     <string name="password2">contra2</string>
     <string name="username">nombre_usuario</string>
+    <string name="settings">ajustes</string>
 </resources>
