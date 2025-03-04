@@ -15,8 +15,11 @@
         android:theme="@style/Theme.NICESTART"
         tools:targetApi="31">
         <activity
+            android:name=".MainBab"
+            android:exported="false" />
+        <activity
             android:name=".Splash"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -47,8 +50,7 @@
             android:name=".CaptureActivityPortraint"
             android:screenOrientation="fullSensor"
             android:theme="@style/zxing_CaptureTheme"
-            android:windowSoftInputMode="stateAlwaysHidden">
-        </activity>
+            android:windowSoftInputMode="stateAlwaysHidden"></activity>
     </application>
 
 </manifest>
