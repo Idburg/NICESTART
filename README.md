@@ -1,4 +1,4 @@
-![imagen](https://github.com/user-attachments/assets/188315f6-faeb-4d54-98a7-d8526c9a7447)PROYECTO NICESTART
+PROYECTO NICESTART
 ==================
 El objetivo de este proyecto fue realizar el boceto de una aplicacion de registro básica para aprender
 a utilizar Android Studio, particularmente la implementación de layouts y la conectividad entre sí. En este proyecto se 
