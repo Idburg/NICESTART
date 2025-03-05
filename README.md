@@ -691,6 +691,16 @@ welcomeMssg.startAnimation(newAnimZoom);
 
 ```
 BottomNavigationBar
----------------------------------
+-------------------
 En muchas aplicaciones se puede observar una barra de navegación en la parte inferior de la pantalla que facilita el uso y acceso a distintas partes
 de dichas aplicaciones, lo cual le otorga al usuario una sensación de comodidad. Para implementarlo, se han de utilizar menús, fragmentos y actividades
+siguiendo el siguiente esquema:
+
+![imagen](https://github.com/user-attachments/assets/5bf14176-d0a5-490b-b767-43490c8b070e)
+
+Activity MainBN
+----------------
+
+![imagen](https://github.com/user-attachments/assets/c753a3aa-9f02-4857-8aaf-b2c8270516cc)
+
+En esta actividad 
