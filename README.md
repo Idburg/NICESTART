@@ -701,6 +701,77 @@ siguiendo el siguiente esquema:
 Activity MainBN
 ----------------
 
-![imagen](https://github.com/user-attachments/assets/c753a3aa-9f02-4857-8aaf-b2c8270516cc)
+![imagen](https://github.com/user-attachments/assets/d2e140c6-44ab-4876-8fe0-f7b900893cef)
+![imagen](https://github.com/user-attachments/assets/503661f6-f1fb-4e98-926a-9c63278301f7)
 
-En esta actividad 
+En esta actividad se puede apreciar un BottomNavigationBar con 4 opciones que, al clickar una aparece el Fragment correspondiente. Para conseguir esto,
+primero se debe definir el archivo `.xml` como el siguiente
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainBN">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/Theme.First.AppBarOverlay"
+        android:gravity="bottom"
+        app:layout_constraintBottom_toBottomOf="@id/view_pager"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:minHeight="?actionBarSize"
+            android:text="@string/app_name"
+            android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:ignore="MissingClass">
+
+    </androidx.viewpager.widget.ViewPager>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:menu="@menu/bottom_navigation_menu"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintBottom_toBottomOf="@id/view_pager"/>
+
+    <!--        android:foregroundTint="@color/bottomselector"-->
+    <!--    style="@style/BottomNavigation"-->
+
+    <!--        android:foregroundTint="@color/bottomselector"-->
+
+    <!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+    <!--        android:id="@+id/fab"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_gravity="bottom|end"-->
+    <!--        android:layout_marginEnd="@dimen/fab_margin"-->
+    <!--        android:layout_marginBottom="16dp"-->
+    <!--        app:srcCompat="@android:drawable/ic_dialog_email" />-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+```
