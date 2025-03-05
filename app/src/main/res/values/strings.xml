@@ -24,4 +24,6 @@
     <string name="bottom_app_bar" translatable="false">Bottom app bar</string>
     <string name="bottom_navigation" translatable="false">Bottom navigation</string>
     <string name="signout">Signout</string>
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
