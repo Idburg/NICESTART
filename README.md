@@ -1,4 +1,4 @@
-PROYECTO NICESTART
+![imagen](https://github.com/user-attachments/assets/188315f6-faeb-4d54-98a7-d8526c9a7447)PROYECTO NICESTART
 ==================
 El objetivo de este proyecto fue realizar el boceto de una aplicacion de registro básica para aprender
 a utilizar Android Studio, particularmente la implementación de layouts y la conectividad entre sí. En este proyecto se 
@@ -775,3 +775,56 @@ primero se debe definir el archivo `.xml` como el siguiente
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
+
+El ViewPager permite agregar la funcionalidad swipe entre los fragmentos y es importante enlazar ese comportamiento con el AppBarLayout
+mediante `app:layout_behaviour`. El BottomNavigationView requiere estar enlazado con un menú mediante `app:menu`, el cual es el siguiente `.xml`:
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/likes"
+        android:title="Likes"
+        android:icon="@drawable/ic_launcher_foreground"
+        android:contentDescription="none"
+        app:showAsAction="always"
+        />
+    <item
+        android:id="@+id/add"
+        android:title="Add"
+        android:icon="@drawable/ic_launcher_foreground"
+        android:contentDescription="none"
+        app:showAsAction="always"
+        />
+    <item
+        android:id="@+id/browse"
+        android:title="Browse"
+        android:icon="@drawable/ic_launcher_foreground"
+        android:contentDescription="none"
+        app:showAsAction="always"
+        />
+    <item
+        android:id="@+id/personal"
+        android:title="Personal"
+        android:icon="@drawable/ic_launcher_foreground"
+        android:contentDescription="none"
+        app:showAsAction="always"
+        />
+</menu>
+```
+> Se recomienda que todos los menús se guarden en `/res/menu`
+
+Una vez hecho esto, ahora toca crear los 4 Fragments y el SectionsPagerAdapter, el cual los maneja dinámicamente.
+Es recomendable seguir una estructura similar a la siguiente imagen, donde los Fragments y los Adapters están en sus 
+propios paquetes/directorios:
+
+![imagen](https://github.com/user-attachments/assets/3b667f58-aa35-46d4-9dd1-3c2cab877ecb)
+![imagen](https://github.com/user-attachments/assets/d679ebd6-afbf-4954-9034-be082f08dfdb)
+> Para el BottomNavigationView sólo interesan aquellas que no tienen 'H' en su nombre
+
+Activity MainBAB
+----------------
+
+![imagen](https://github.com/user-attachments/assets/42b8fdfb-80ba-4748-9164-551ae00d6bb4)
+
