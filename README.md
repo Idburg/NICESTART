@@ -505,8 +505,8 @@ Para codificar lo siguiente en java, se ha utilizado la siguiente función, la c
     }
 ```
 
-Interactividad
---------------
+Interactividad y Funcionalidad
+==============================
 Dado que se buscaba añadir interactividad entre las actividades, lo primero que se hizo fue especificar qué botón lleva a qué sitio y
 qué actividad lleva ActionBar y no. Para ello, se debe configurar el `AndroidManifest.xml` de la siguiente forma:
 
@@ -690,4 +690,7 @@ Animation newAnimZoom = AnimationUtils.loadAnimation(this,R.anim.zoom_in_out);
 welcomeMssg.startAnimation(newAnimZoom);
 
 ```
-
+BottomNavigationBar
+---------------------------------
+En muchas aplicaciones se puede observar una barra de navegación en la parte inferior de la pantalla que facilita el uso y acceso a distintas partes
+de dichas aplicaciones, lo cual le otorga al usuario una sensación de comodidad. Para implementarlo, se han de utilizar menús, fragmentos y actividades
