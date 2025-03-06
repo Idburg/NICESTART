@@ -1154,6 +1154,10 @@ que tiene el fichero en modo oscuro, al igual que con el locale, se debe cambiar
 Alternativamente, si solo se busca cambiar los colores, se puede hacer exactamente lo mismo pero con colors.xml en vez de themes.xml, aunque puedas 
 igualmente cambiar los colores dentro de éste último.
 
+![imagen](https://github.com/user-attachments/assets/02917257-23f2-4c65-be7c-c661533a4cbc)
+
+El resultado se puede observar en el siguiente ejemplo:
+
 ![imagen](https://github.com/user-attachments/assets/5b0d06cb-7cca-4972-8cbf-9d6728753e66)
 > Ejemplo del BottomAppBar con colores blanco y negro cambiados
 
