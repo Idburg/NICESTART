@@ -1136,5 +1136,22 @@ El resultado de hacer esto se ve al cambiar el idioma del sistema en el móvil o
 Temas y Estilos
 ---------------
 
-Otra de las funcionalidades importantes de una aplicación hoy en día es el uso de varios estilos como por ejemplo el modo nocturno, el cual cambia los colores de la aplicación 
-a otros que no reflejan tanta luz y que no cansen los ojos del usuario. Para tener distintos estilos en Android Studio se debe ir primero 
+Otra de las funcionalidades importantes de una aplicación hoy en día es el uso de varios estilos como por ejemplo el modo nocturno,
+el cual cambia los colores de la aplicación a otros que no reflejan tanta luz y que no cansen los ojos del usuario. 
+Para tener distintos estilos en Android Studio se debe ir primero al fichero themes.xml en `res/values/themes`
+
+![imagen](https://github.com/user-attachments/assets/1052f3ba-cac6-4c53-b74c-538b345081af)
+
+Para crear un fichero de modo oscuro, se da click derecho a la carpeta values, luego a Values Resource File y aparecerá el siguiente cuadro:
+
+![imagen](https://github.com/user-attachments/assets/c29bb35f-8c4a-4d91-bd7c-8d696bbe1e8f)
+> Se debe elegir el qualifier manualmente de la lista, que por defecto está en 'not night'
+
+Aquí se pueden apreciar los qualifiers, los cuales nos permiten crear directorios/carpetas que categorizan ficheros XML con el mismo nombre 
+pero distinto contenido en ellas. En nuestro caso tenemos dos ficheros themes.xml, uno por defecto y el otro para modo oscuro. Para ver el efecto 
+que tiene el fichero en modo oscuro, al igual que con el locale, se debe cambiar en los ajustes del sistema.
+
+Alternativamente, si solo se busca cambiar los colores, se puede hacer exactamente lo mismo pero con colors.xml en vez de themes.xml, aunque puedas 
+igualmente cambiar los colores dentro de éste último.
+
+
