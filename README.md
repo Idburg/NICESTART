@@ -1118,7 +1118,7 @@ En Android Studio existe un archivo llamado `strings.xml`, el cual sirve para al
 > Cuando se pone un texto con `android:text` en un elemento XML, Android Studio lo subraya en amarillo para que
 > lo conviertas en un recurso string para mejor manejo de la app. Lo que se ve en este documento son dichos recursos
 
-Aquí hay que pulsar 'Open Editor' para que aparezca el siguiente cuadro:
+Aquí hay que pulsar 'Open Editor' para que aparezca la siguiente tabla:
 
 ![imagen](https://github.com/user-attachments/assets/d90327c8-895c-48f6-a9ff-f8f7e252c3ed)
 
@@ -1133,8 +1133,8 @@ El resultado de hacer esto se ve al cambiar el idioma del sistema en el móvil o
 ![imagen](https://github.com/user-attachments/assets/17e6ec73-5582-4121-b34e-487c5ac76bd5)
 ![imagen](https://github.com/user-attachments/assets/0dc0c7c8-bad2-4212-a1ca-3dfe4fbdac6b)
 
-
-
-
 Temas y Estilos
 ---------------
+
+Otra de las funcionalidades importantes de una aplicación hoy en día es el uso de varios estilos como por ejemplo el modo nocturno, el cual cambia los colores de la aplicación 
+a otros que no reflejan tanta luz y que no cansen los ojos del usuario. Para tener distintos estilos en Android Studio se debe ir primero 
