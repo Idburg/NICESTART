@@ -828,18 +828,6 @@ El contenido de los fragments en este ejemplo es el generado por Android Studio 
 el SectionsPagerAdapter necesita tener el siguiente código
 
 ```java
-package com.example.nicestart.ui.main;
-import android.content.Context;
-
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentPagerAdapter;
-
-import com.example.nicestart.fragments.Page1;
-import com.example.nicestart.fragments.Page2;
-import com.example.nicestart.fragments.Page3;
-import com.example.nicestart.fragments.Page4;
-
 public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
     //    @StringRes
@@ -898,27 +886,6 @@ Aquí se puede apreciar la funcionalidad del Adapter, que no es más que un inst
 Teniendo esto, ya se puede modificar el MainBN con el siguiente código:
 
 ```java
-package com.example.nicestart;
-
-import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.Toast;
-
-import androidx.activity.EdgeToEdge;
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-import androidx.viewpager.widget.ViewPager;
-
-import com.example.nicestart.ui.main.SectionsPagerAdapter;
-import com.google.android.material.bottomnavigation.BottomNavigationItemView;
-import com.google.android.material.bottomnavigation.BottomNavigationMenuView;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-
 public class MainBN extends AppCompatActivity {
 
     private MenuItem prevMenuItem;
@@ -1051,20 +1018,6 @@ entre estas dos es principalmente que el BottomNavigationBar te manda directamen
 mientras que la otra funciona más como un menú de opciones. Esto se aprecia mejor observando el código:
 
 ```java
-package com.example.nicestart;
-
-
-import android.os.Bundle;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.Toast;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
-import com.google.android.material.bottomappbar.BottomAppBar;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
 public class MainBAB extends AppCompatActivity {
     
     @Override
@@ -1157,7 +1110,24 @@ El menú que se utiliza para BottomAppBar es el siguiente:
 Locale
 --------
 
-Una de las funcionalidades más importantes 
+Una de las funcionalidades más importantes que debe tener cualquier aplicación es su traducción en distintos idiomas. 
+En Android Studio existe un archivo llamado `strings.xml`, el cual sirve para albergar todos los recursos string 
+(texto en botones, TextViews, etc.). Al abrirlo, aparecerá el siguiente cuadro azul encima:
+
+![imagen](https://github.com/user-attachments/assets/d9f8fa6f-e87e-4c34-8835-ae014c007dfd)
+> Cuando se pone un texto con `android:text` en un elemento XML, Android Studio lo subraya en amarillo para que
+> lo conviertas en un recurso string para mejor manejo de la app. Lo que se ve en este documento son dichos recursos
+
+Aquí hay que pulsar 'Open Editor' para que aparezca el siguiente cuadro:
+
+![imagen](https://github.com/user-attachments/assets/d90327c8-895c-48f6-a9ff-f8f7e252c3ed)
+
+Aquí es donde se deben insertar todas las traducciones que se buscan añadir a la aplicación. Con los símbolos de + y -
+se añaden o quitan recursos string respectivamente, mientras que el icono de mundo te permite añadir columnas de idiomas.
+Por cada idioma se genera su propio strings.xml en `res/values/strings`:
+
+![imagen](https://github.com/user-attachments/assets/627c2a90-53da-45f6-a465-b3d6df4fd37e)
+
 
 Temas y Estilos
 ---------------
