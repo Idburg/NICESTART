@@ -1046,10 +1046,118 @@ Activity MainBAB
 
 ![imagen](https://github.com/user-attachments/assets/42b8fdfb-80ba-4748-9164-551ae00d6bb4)
 
+Esta activity, similar al MainBN, contiene una barra inferior de otro tipo, conocida como BottomAppBar. La diferencia
+entre estas dos es principalmente que el BottomNavigationBar te manda directamente a las destinaciones que busca el usuario,
+mientras que la otra funciona más como un menú de opciones. Esto se aprecia mejor observando el código:
 
+```java
+package com.example.nicestart;
+
+
+import android.os.Bundle;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
+import com.google.android.material.bottomappbar.BottomAppBar;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+public class MainBAB extends AppCompatActivity {
+    
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main_bab);
+
+//        this.getSupportActionBar().setDisplayShowCustomEnabled(true);
+//
+//        LayoutInflater inflater = LayoutInflater.from(this);
+//        View v = inflater.inflate(R.layout.custom_action_bar, null);
+//
+//        TextView titleTextView = (TextView) v.findViewById(R.id.custom_action_bar_title);
+//        titleTextView.setText(this.getTitle());
+//        titleTextView.setTypeface(App.getInstance().getActionBarTypeFace());
+//
+//        this.getSupportActionBar().setCustomView(v);
+
+        // cast al xml
+        BottomAppBar bottomAppBar = findViewById(R.id.bottom_app_bar);
+        FloatingActionButton myfab = findViewById(R.id.fab);
+
+        //click event en el  FAB
+        myfab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainBAB.this, "FAB Clicked", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        //click event en el Hamburguer menu
+        bottomAppBar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainBAB.this, "Menu clicked", Toast.LENGTH_SHORT).show();
+//                sheetBehavior = BottomSheetBehavior.from(sheet);
+            }
+
+
+        });
+
+        //click event en el Bottom bar menu item
+        bottomAppBar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+
+                int id = item.getItemId();
+
+                if(id == R.id.heart)
+                {
+                    Toast.makeText(MainBAB.this, "Added to favourites", Toast.LENGTH_SHORT).show();
+                }
+                if(id == R.id.search)
+                {
+                    Toast.makeText(MainBAB.this, "Beginning search", Toast.LENGTH_SHORT).show();
+                }
+                return false;
+            }
+        });
+
+
+    }
+
+}
+```
+> Cabe apreciar que el uso de los métodos para el manejo del menú son distintos dado que uno usa ViewPager para deslizar entre los fragments
+> y el otro simplemente asocia unos botones al id correspondiente del menú  
+
+El menú que se utiliza para BottomAppBar es el siguiente:
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/heart"
+        android:title="Favourite"
+        android:icon="@drawable/key_icon"
+        app:showAsAction="ifRoom"
+        />
+    <item
+        android:id="@+id/search"
+        android:title="Language"
+        android:icon="@drawable/user_icon"
+        app:showAsAction="ifRoom"
+        />
+</menu>
+```
 
 Locale
 --------
+
+Una de las funcionalidades más importantes 
 
 Temas y Estilos
 ---------------
