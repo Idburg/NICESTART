@@ -1128,6 +1128,13 @@ Por cada idioma se genera su propio strings.xml en `res/values/strings`:
 
 ![imagen](https://github.com/user-attachments/assets/627c2a90-53da-45f6-a465-b3d6df4fd37e)
 
+El resultado de hacer esto se ve al cambiar el idioma del sistema en el móvil o en el emulador:
+
+![imagen](https://github.com/user-attachments/assets/17e6ec73-5582-4121-b34e-487c5ac76bd5)
+![imagen](https://github.com/user-attachments/assets/0dc0c7c8-bad2-4212-a1ca-3dfe4fbdac6b)
+
+
+
 
 Temas y Estilos
 ---------------
